@@ -4,7 +4,7 @@
     "label": "Incoming Research Assistant at Salk Institute",
     "picture": "https://github.com/tom21100227.png",
     "email": "chongye_han@outlook.com",
-    "phone": "207-0000-0000",
+    "phone": "Hidden for privacy",
     "website": "https://tom21100227.github.io",
     "summary": "B.A. in Molecular and Cellular Biology and Computer Science",
     "location": { "address": "", "postalCode": "04011", "city": "Brunswick", "countryCode": "USA", "region": "Maine" },
@@ -40,6 +40,16 @@
       "startDate": "2021-09-01",
       "endDate": "2025-05-24",
       "courses": [
+        "MATH 3606 - Advanced Bayesian Statistics",
+        "CSCI 3250 - Computational Geometry",
+        "CSCI 3465 - Financial Machine Learning",
+        "CSCI 3485 - Deep Learning for Computer Vision",
+        "CSCI 2400 - Artificial Intelligence",
+        "CSCI 2335 - Software Engineering",
+        "BIOL 3333 - Advanced Molecular and Cellular Biology",
+        "BIOL 2557 - Immunology",
+        "NEUR 2504 - Cellular Signalling", 
+        "NEUR 2510 - Neuropharmacology"
       ]
     }
   ],
@@ -56,10 +66,27 @@
         "Conducted full time original research to understand the basis of adaptive behaviors and plasticity in adult crickets.",
         "Processed over 100+ GB of high throughput pose estimation data, reduced analysis runtime by 50%"
       ]
+    }, 
+    {
+      "company": "Bowdoin College Center for Learning and Teaching",
+      "position": "Learning Assistant and Grader",
+      "website": "",
+      "startDate": "2023-09-01",
+      "endDate": "2025-05-24",
+      "summary": "Assisting in the teaching of undergraduate courses in computer science and mathematics.",
+      "highlights": [
+        "Taught and assisted the following courses: Data Structures and Algorithms, Artificial Intelligence, Deep Learning for Computer Vision, Foundations of Computer Systems, Biostatistics."
+      ]
     }
   ],
   "volunteer": [
-    
+    {
+      "organization": "Chinese Student Association, Bowdoin College",
+      "position": "President and Co-founder",
+      "startDate": "2022-09-01",
+      "endDate": "2025-05-24",
+      "summary": "Co-founded the first affinity group at Bowdoin College for Chinese and Chinese American students. Organizing cultural events, engaging on average 150+ participants for 10 events per semester, fostering a supportive and strong community for Chinese students and faculties at Bowdoin College."
+    }
   ],
   "awards": [
     {
@@ -78,6 +105,16 @@
   "references": [
     {
       "name": "Available upon request"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native or Bilingual Proficiency"
+    },
+    {
+      "language": "Chinese",
+      "fluency": "Native or Bilingual Proficiency"
     }
   ]
 }
