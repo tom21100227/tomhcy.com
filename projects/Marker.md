@@ -9,5 +9,5 @@ labels:
   - Python
   - Bioinformatics
 summary: "A small utility tool for fast precision annotation of behavioral data."
-project_url: "https://github.com/tom21100227/Marker"
+projecturl: "https://github.com/tom21100227/Marker"
 ---
