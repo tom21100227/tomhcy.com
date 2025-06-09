@@ -13,7 +13,7 @@ labels:
 summary: "My undergraduate honors thesis, which applies deep learning analysis methods to study ethology in crickets for neuroplasticity research."
 ---
 
-<img src="{{ site.baseurl }}/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="project-image">
+<img src="{{ site.baseurl }}/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid">
 
 TODO: 
 
