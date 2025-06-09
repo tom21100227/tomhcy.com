@@ -4,10 +4,10 @@
     "label": "Incoming Research Assistant at Salk Institute",
     "picture": "https://github.com/tom21100227.png",
     "email": "chongye_han@outlook.com",
-    "phone": "Hidden for privacy",
+    "phone": "Phone # hidden for privacy",
     "website": "https://tom21100227.github.io",
     "summary": "B.A. in Molecular and Cellular Biology and Computer Science",
-    "location": { "address": "", "postalCode": "04011", "city": "Brunswick", "countryCode": "USA", "region": "Maine" },
+    "location": { "address": "", "postalCode": "", "city": "Brunswick", "countryCode": "USA", "region": "Maine" },
     "profiles": [
       { "network": "github", "username": "tom21100227", "url": "http://github.com/tom21100227" },
       { "network": "linkedin", "username": "chongye-tom-han", "url": "http://linkedin.com/in/chongye-tom-han" }
@@ -16,12 +16,23 @@
   "interests": [
     { "name": "Computational Biology" },
     { "name": "Computer Vision" },
-    { "name": "Machine Learning/AI" }
+    { "name": "Machine Learning/AI" },
+    {"name": "<a href=\"https://www.discogs.com/user/ThomHan/collection\">Vinyl Collection</a>"}
   ],
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "Python", "R", "bash/zsh scripting","Swift/SwiftUI", "Java", "C/C++" ]
+      "keywords": [ "Python", "R", "bash/zsh scripting","Swift/SwiftUI", "Java", "C/C++", "SQL" ]
+    },
+    {
+      "name": "Software", 
+      "keywords": [
+        "Git", 
+        "Docker",
+        "Jupyter Notebook",
+        "LLDB/GDB",
+        "XCode"
+      ]
     },
     {
       "name": "Data Science",
@@ -50,13 +61,15 @@
         "BIOL 2557 - Immunology",
         "NEUR 2504 - Cellular Signalling", 
         "NEUR 2510 - Neuropharmacology"
-      ]
+      ],
+      "gpa": "3.89/4.0 Major GPA: (CS: 4.0/4.0, Bio: 3.93/4.0)"
     }
   ],
   "work": [
     {
       "company": "Bowdoin College Neuroscience Department",
       "position": "Research Assistant",
+      "location": "Brunswick, ME",
       "website": "",
       "startDate": "2023-06-04",
       "endDate": "Present",
@@ -70,12 +83,34 @@
     {
       "company": "Bowdoin College Center for Learning and Teaching",
       "position": "Learning Assistant and Grader",
+      "location": "Brunswick, ME",
       "website": "",
       "startDate": "2023-09-01",
       "endDate": "2025-05-24",
       "summary": "Assisting in the teaching of undergraduate courses in computer science and mathematics.",
       "highlights": [
-        "Taught and assisted the following courses: Data Structures and Algorithms, Artificial Intelligence, Deep Learning for Computer Vision, Foundations of Computer Systems, Biostatistics."
+        "I was learning assistant and/or grader for the following class: ",
+        "Artificial Intelligence with Professor Jeova Farias (2025 Spring)",
+        "Computer Systems with Professor Sean Barker and Stephen Houser (2024 Spring/Fall)",
+        "Intro to Data Science with Professor Jack O'Brien (2024 Fall)",
+        "Data Structures with Professor Dave Byrd (2023 Spring/Fall)"
+      ]
+    },
+    {
+      "name": "Bowdoin College Information Technology",
+      "company": "Bowdoin College Information Technology",
+      "url": "https://bowdoin.edu/it",
+      "website": "https://bowdoin.edu/it",
+      "location": "Brunswick, ME",
+      "description": "Campus IT services",
+      "summary": "Campus IT services",
+      "position": "ETS Student Technician",
+      "startDate": "2022",
+      "endDate": "Present",
+      "highlights": [
+        "Assist in event production and provide technical support for various campus events, such as commencement, guest lecturers, and student-led plays.",
+        "Used TeamDynamix ITSM to generate/maintain detailed ticket records and update documentation",
+        "Mentored and trained new technicians alongside the Event Production Coordinator"
       ]
     }
   ],
