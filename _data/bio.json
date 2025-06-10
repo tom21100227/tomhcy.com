@@ -71,12 +71,25 @@
   ],
   "work": [
     {
+      "company": "Salk Institute for Biological Studies",
+      "position": "Research Assistant II",
+      "location": "La Jolla, CA",
+      "website": "https://www.salk.edu",
+      "url": "https://www.salk.edu",
+      "startDate": "2025",
+      "endDate": "Present",
+      "summary": "Joint position in Dr. Talmo Pereira and Dr. Eiman Azim's labs.",
+      "highlights": [
+        ""
+      ]
+    },
+    {
       "company": "Bowdoin College Neuroscience Department",
       "position": "Research Assistant",
       "location": "Brunswick, ME",
       "website": "github.com/HorchLab",
       "url": "github.com/HorchLab",
-      "startDate": "2023-06-04",
+      "startDate": "2023",
       "endDate": "Present",
       "summary": "Honors Student for Dr. Hadley Horch",
       "highlights": [
@@ -91,15 +104,16 @@
       "location": "Brunswick, ME",
       "website": "bowdoin.edu/baldwin-center",
       "url": "bowdoin.edu/baldwin-center",
-      "startDate": "2023-09-01",
-      "endDate": "2025-05-24",
+      "startDate": "2023",
+      "endDate": "2025",
       "summary": "Assisting in the teaching of undergraduate courses in computer science and mathematics.",
       "highlights": [
         "I was learning assistant and/or grader for the following class: ",
-        "Artificial Intelligence with Professor Jeova Farias (2025 Spring)",
-        "Computer Systems with Professor Sean Barker and Stephen Houser (2024 Spring/Fall)",
-        "Intro to Data Science with Professor Jack O'Brien (2024 Fall)",
-        "Data Structures with Professor Dave Byrd (2023 Spring/Fall)"
+        "<strong>Deep Learning for Computer Vision</strong> with Professor Jeova Farias (2025 Spring)",
+        "<strong>Artificial Intelligence</strong> with Professor Jeova Farias (2025 Spring)",
+        "<strong>Foundations of Computer Systems</strong> with Professor Sean Barker and Stephen Houser (2024 Spring/Fall)",
+        "<strong>Intro to Data Science</strong> with Professor Jack O'Brien (2024 Fall)",
+        "<strong>Data Structures and Algorithms</strong> with Professor Dave Byrd (2023 Spring/Fall)"
       ]
     },
     {
