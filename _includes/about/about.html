@@ -2,7 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 d-flex align-items-center justify-content-center">
-        <img width="300px" src="{{ site.data.bio.basics.picture }}" class="d-block mx-auto rounded-circle">
+        <div class="profile-wrapper">
+          <img width="300px" src="{{ site.data.bio.basics.picture }}" class="d-block mx-auto rounded-circle">
+          <img src="{{ '/img/bowdoin-placeholder.svg' | prepend: site.baseurl }}" class="profile-icon icon-bowdoin" alt="Bowdoin placeholder logo">
+          <img src="{{ '/img/salk-placeholder.svg' | prepend: site.baseurl }}" class="profile-icon icon-salk" alt="Salk placeholder logo">
+          <img src="{{ '/img/cricket.svg' | prepend: site.baseurl }}" class="profile-icon icon-cricket" alt="Cricket icon">
+        </div>
       </div>
       <div class="col-lg-8">
         <h1 class="display-4 text-center">{{ site.data.bio.basics.name }}</h1>
