@@ -1,6 +1,43 @@
-.profile-wrapper { position: relative; display: inline-block; }
-.profile-icon { position: absolute; width: 60px; height: 60px; opacity: 0; transform: scale(0.5); transition: transform 0.5s ease-out, opacity 0.5s ease-out; }
-.profile-wrapper.loaded .profile-icon { opacity: 1; transform: scale(1); }
-.icon-bowdoin { top: -15px; left: -15px; }
-.icon-salk { top: -15px; right: -15px; }
-.icon-cricket { bottom: -15px; right: -15px; }
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.profile-wrapper.loaded .profile-icon {
+  opacity: 1;
+  animation: orbit-in 0.8s forwards ease-out;
+}
+
+@keyframes orbit-in {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translate(0) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--radius)) scale(var(--end-scale, 1));
+  }
+}
+
+.icon-bowdoin {
+  --angle: -150deg;
+  animation-delay: 0s;
+}
+
+.icon-salk {
+  --angle: -30deg;
+  animation-delay: 0.1s;
+}
+
+.icon-cricket {
+  --angle: 90deg;
+  animation-delay: 0.2s;
+}
