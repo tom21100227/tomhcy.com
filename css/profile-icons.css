@@ -1,0 +1,48 @@
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.profile-wrapper.loaded .profile-icon {
+  opacity: 0.8;
+  animation: orbit-in 0.8s forwards ease-out;
+}
+
+@keyframes orbit-in {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translate(0.7*var(--radius)) scale(0);
+  }
+  to {
+    transform: 
+    translate(-50%, -50%) 
+    rotate(var(--angle)) 
+    translate(var(--radius)) 
+    rotate(calc(-1 * var(--angle)))
+    scale(var(--end-scale, 1));
+  }
+}
+
+.icon-bowdoin {
+  --angle: 190deg;
+  animation-delay: 0s;
+}
+
+.icon-salk {
+  --angle: -40deg;
+  animation-delay: 0.4s;
+}
+
+.icon-cricket {
+  --angle: 130deg;
+  animation-delay: 0.2s;
+}
