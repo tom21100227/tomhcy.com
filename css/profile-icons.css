@@ -11,10 +11,33 @@
   height: 60px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
+  --angle: 0deg;
+  --end-opacity: 1;
+  animation-delay: 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-icon.circle {
+  border-radius: 50%;
+  background-color: var(--circle-color, transparent);
+}
+
+.profile-icon.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .profile-wrapper.loaded .profile-icon {
-  opacity: 0.8;
   animation: orbit-in 0.8s forwards ease-out;
 }
 
@@ -28,7 +51,7 @@
       scale(0.01);
   }
   to {
-    opacity: 1;
+    opacity: var(--end-opacity, 1);
     transform: 
       translate(-50%, -50%) 
       rotate(var(--angle)) 
@@ -38,17 +61,3 @@
   }
 }
 
-.icon-bowdoin {
-  --angle: 190deg;
-  animation-delay: 0s;
-}
-
-.icon-salk {
-  --angle: -40deg;
-  animation-delay: 0.4s;
-}
-
-.icon-cricket {
-  --angle: 130deg;
-  animation-delay: 0.2s;
-}
