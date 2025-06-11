@@ -28,7 +28,13 @@
 .profile-icon.circle {
   border-radius: 50%;
   background-color: var(--circle-color, transparent);
-  padding: 10%;
+}
+
+.profile-icon.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .profile-wrapper.loaded .profile-icon {
