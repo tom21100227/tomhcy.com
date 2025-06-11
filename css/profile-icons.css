@@ -38,7 +38,7 @@
 }
 
 .profile-wrapper.loaded .profile-icon {
-  animation: orbit-in 0.5s forwards ease-out;
+  animation: orbit-in 0.5s forwards cubic-bezier(0.68, -0.3, 0.32, 1.3);
 }
 
 @keyframes orbit-in {
