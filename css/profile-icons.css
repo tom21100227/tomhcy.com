@@ -38,7 +38,7 @@
 }
 
 .profile-wrapper.loaded .profile-icon {
-  animation: orbit-in 0.8s forwards ease-out;
+  animation: orbit-in 0.5s forwards ease-out;
 }
 
 @keyframes orbit-in {
