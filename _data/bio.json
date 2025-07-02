@@ -6,28 +6,58 @@
     "email": "chongye_han@outlook.com",
     "phone": "",
     "website": "https://tom21100227.github.io",
-    "summary": "I'm a biology and CS student passionate about using AI and data science to unravel the mysteries of complex biological questions. I'm now a research assistant at the Salk Institute, working on projects that leverages deep learning powered tools to analyze pathogenesis of ALS in mouse model with Dr. Talmo Pereira and Dr. Eiman Azim. When I'm not in lab, you'll find me exploring scenic bike routes or tinkering with my Flipper Zero.",
-    "location": { "address": "", "postalCode": "", "city": "Brunswick", "countryCode": "USA", "region": "Maine" },
+    "summary": "I'm a biology and CS student passionate about using AI and data science to unravel the mysteries of complex biological questions. I'm now a research assistant at <a href=\"https://talmolab.org/\">the Pereira Lab in Salk Institute</a>, working on projects that leverages deep learning powered tools to analyze pathogenesis of ALS in mouse model with Dr. Talmo Pereira and Dr. Eiman Azim. When I'm not in lab, you'll find me exploring scenic bike routes around La Jollaor tinkering with my Flipper Zero.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "La Jolla",
+      "countryCode": "USA",
+      "region": "California"
+    },
     "profiles": [
-      { "network": "github", "username": "tom21100227", "url": "http://github.com/tom21100227" },
-      { "network": "linkedin", "username": "chongye-tom-han", "url": "http://linkedin.com/in/chongye-tom-han" }
+      {
+        "network": "github",
+        "username": "tom21100227",
+        "url": "http://github.com/tom21100227"
+      },
+      {
+        "network": "linkedin",
+        "username": "chongye-tom-han",
+        "url": "http://linkedin.com/in/chongye-tom-han"
+      }
     ]
   },
   "interests": [
-    { "name": "Computational Biology" },
-    { "name": "Computer Vision" },
-    { "name": "Machine Learning/AI" },
-    { "name": "<a href=\"https://www.discogs.com/user/ThomHan/collection\">Vinyl Collection</a>"}
+    {
+      "name": "Computational Biology"
+    },
+    {
+      "name": "Computer Vision"
+    },
+    {
+      "name": "Machine Learning/AI"
+    },
+    {
+      "name": "<a href=\"https://www.discogs.com/user/ThomHan/collection\">Vinyl Collection</a>"
+    }
   ],
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "Python", "R", "bash/zsh scripting","Swift/SwiftUI", "Java", "C/C++", "SQL" ]
+      "keywords": [
+        "Python",
+        "R",
+        "bash/zsh scripting",
+        "Swift/SwiftUI",
+        "Java",
+        "C/C++",
+        "SQL"
+      ]
     },
     {
-      "name": "Software", 
+      "name": "Software",
       "keywords": [
-        "Git", 
+        "Git",
         "Docker",
         "Jupyter Notebook",
         "LLDB/GDB",
@@ -36,15 +66,30 @@
     },
     {
       "name": "Data Science",
-      "keywords": [ "NumPy", "Pandas", "SciPy", "tidyverse", "ggplot2", "Matplotlib" ]
+      "keywords": [
+        "NumPy",
+        "Pandas",
+        "SciPy",
+        "tidyverse",
+        "ggplot2",
+        "Matplotlib"
+      ]
     },
     {
       "name": "Machine Learning",
-      "keywords": [ "PyTorch", "TensorFlow with Keras" ]
+      "keywords": [
+        "PyTorch",
+        "TensorFlow with Keras"
+      ]
     },
     {
-      "name": "Wet Lab", 
-      "keywords": [ "Molecular Cloning", "qPCR", "Next Generation Sequencing", "Western Blot" ]
+      "name": "Wet Lab",
+      "keywords": [
+        "Molecular Cloning",
+        "qPCR",
+        "Next Generation Sequencing",
+        "Western Blot"
+      ]
     }
   ],
   "education": [
@@ -63,7 +108,7 @@
         "CSCI 2335 - Software Engineering",
         "BIOL 3333 - Advanced Molecular and Cellular Biology",
         "BIOL 2557 - Immunology",
-        "NEUR 2504 - Cellular Signalling", 
+        "NEUR 2504 - Cellular Signalling",
         "NEUR 2510 - Neuropharmacology"
       ],
       "gpa": "3.89/4.0 Major GPA: (CS: 4.0/4.0, Bio: 3.93/4.0)"
@@ -97,7 +142,7 @@
         "Conducted full time original research to understand the basis of adaptive behaviors and plasticity in adult crickets.",
         "Processed over 100+ GB of high throughput pose estimation data, reduced analysis runtime by 50%"
       ]
-    }, 
+    },
     {
       "company": "Bowdoin College Center for Learning and Teaching",
       "position": "Learning Assistant and Grader",
