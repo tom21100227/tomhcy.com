@@ -59,9 +59,10 @@ a {
     --tf-icon-fill: var(--bs-gray-200);
     --tf-icon-hover: var(--bs-gray-400);
     --tf-page-bg-color: var(--bs-body-bg);
-    --tf-footer-bg-color: #1c1c1c;
-    --tf-projects-bg-color: #1c1c1c;
-    --tf-essays-bg-color: #1c1c1c;
+    --tf-dark-bg-color: #1c1c1c;
+    --tf-footer-bg-color: var(--tf-dark-bg-color);
+    --tf-projects-bg-color: var(--tf-dark-bg-color);
+    --tf-essays-bg-color: var(--tf-dark-bg-color);
     --bs-gradient: none;
   }
 
