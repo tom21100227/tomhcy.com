@@ -48,3 +48,58 @@ a {
   background-color: var(--bs-white);
   border-top: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    --bs-light-rgb: 33,37,41;
+    --bs-card-bg: #1e1e1e;
+    --bs-link-color: #58a6ff;
+    --bs-link-hover-color: #1f6feb;
+    --tf-icon-fill: var(--bs-gray-200);
+    --tf-icon-hover: var(--bs-gray-400);
+    --tf-page-bg-color: var(--bs-body-bg);
+    --tf-footer-bg-color: #1c1c1c;
+    --tf-projects-bg-color: #1c1c1c;
+    --tf-essays-bg-color: #1c1c1c;
+    --bs-gradient: none;
+  }
+
+  body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar-light .navbar-brand:hover {
+    color: #fff;
+  }
+
+  .navbar {
+    --bs-navbar-color:  rgba(230, 230, 230, 0.75);
+    --bs-navbar-brand-color: rgba(230, 230, 230, 0.75);
+    --bs-bg-opacity: 0;
+  }
+
+  footer.navbar {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .card {
+    --bs-card-bg: #4a4a4a;
+  }
+  
+  .text-muted {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .btn-outline-dark {
+    color: var(--bs-body-color);
+    border-color: var(--bs-body-color);
+  }
+
+  .card-footer {
+    background-color: var(--bs-card-bg);
+  }
+}
