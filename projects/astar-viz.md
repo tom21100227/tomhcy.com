@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/astar-viz/demo.png
 title: "A* Visualization"
-date: 2024-12
+date: 2024
 published: true
 labels:
   - C++

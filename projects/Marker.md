@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/marker/marker.png
 title: "Marker"
-date: 2025-02
+date: 2025
 published: true
 labels:
   - Python

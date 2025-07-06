@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/stock-abnormality-detector/poster.png
 title: "Stock Abnormality Detector"
-date: 2024-05
+date: 2024
 published: true
 labels:
   - Python
