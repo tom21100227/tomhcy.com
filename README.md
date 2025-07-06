@@ -6,8 +6,9 @@ Changes made from the original TechFolios template include:
 
 - Animation effects for icons around profile picture
 - Layout changes to the home page
+- Implemented dark mode
 
 TODO:
 
-- Implement dark mode
-- Perhaps change writing into something else
+- Maybe change writing to something else
+
