@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/healthviz/healthviz_icon.png
 title: "HealthViz"
-date: 2025
+date: 2025 - present
 published: true
 labels:
   - Swift
