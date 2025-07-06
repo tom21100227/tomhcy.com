@@ -3,13 +3,13 @@ layout: project
 type: project
 image: img/placeholder.png
 title: "GPTZero-Web"
-date: 2025
+date: 2024-12
 published: true
 labels:
-  - Machine Learning
   - Python
   - Web Development
   - PyTorch
-summary: "An open source implementation of GPTZero for self use."
+  - Flask
+summary: "An open source implementation of GPTZero adapted for self use. Host and runs locally with a web interface for easy access. Uses PyTorch and Flask."
 projecturl: "https://github.com/tom21100227/GPTZeroWeb"
 ---

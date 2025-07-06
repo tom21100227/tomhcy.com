@@ -2,15 +2,15 @@
 layout: project
 type: project
 image: img/honorthesis/FinalPoster.png
-title: "Exploring Auditory Compensatory Neuroplasticity and Negative Phonotactic Behavior in G. bimaculatus Through Computer Vision and Machine Learning-Driven Analysis"
-date: 2025-05-24
+title: "Exploring Compensatory Neuroplasticity in <i>G. bimaculatus</i> Through Machine Learning-Driven Analysis"
+date: 2025-05
 published: true
 labels:
   - Computational Biology
   - Ethology
   - Deep Learning
   - Bioinformatics
-summary: "My undergraduate honors thesis, which applies deep learning analysis methods to study ethology in crickets for neuroplasticity research."
+summary: "My undergraduate honors thesis, applies deep learning analysis methods like computer vision to study ethology in crickets for neuroscience research."
 ---
 
 <img src="{{ site.baseurl }}/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid">

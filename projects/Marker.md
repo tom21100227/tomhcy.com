@@ -3,11 +3,12 @@ layout: project
 type: project
 image: img/marker/marker.png
 title: "Marker"
-date: 2025
+date: 2025-02
 published: true
 labels:
   - Python
   - Bioinformatics
-summary: "A small utility tool for fast precision annotation of behavioral data."
+  - Ethology
+summary: "A small utility tool for fast precision behavioral annotation of single animal behavioral project. Written in Python but optimized for speed and performance for efficient annotation without sacrificing usability."
 projecturl: "https://github.com/tom21100227/Marker"
 ---
