@@ -8,6 +8,7 @@ Changes made from the original TechFolios template include:
 - Layout changes to the home page
 - Implemented dark mode
 - Refine the project page logic to include years long project and sort accordingly
+- Added a "Last Updated" date to writings/essays that are more of a blog. 
 
 TODO:
 

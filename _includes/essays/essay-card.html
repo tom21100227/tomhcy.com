@@ -2,7 +2,14 @@
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title">{{ include.page.title }}</h5>
-      <p class="card-text"><small class="text-muted">{{ include.page.date | date_to_string }}</small></p>
+      <p class="card-text"><small class="text-muted">
+        
+        {%- if include.page.last_updated -%}
+          Updated {{ include.page.last_updated | date_to_string }}
+        {%- else -%}
+          {{ include.page.date | date_to_string }}
+        {%- endif -%}
+      </small></p>
       <p class="card-text">{{ include.page.content | markdownify | strip_html | truncatewords: 40 }}</p>
       <p>
         {% for label in include.page.labels %}

@@ -4,6 +4,7 @@ type: essay
 title: "Things I've done for this site, and how I did them"
 # All dates must be YYYY-MM-DD format!
 date: 2025-07-06
+last_updated: 
 published: true
 labels:
   - Web Development
