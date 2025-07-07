@@ -39,12 +39,14 @@
     </script>
     {% endif %}
 
+    <!-- Load music status script early to start API request ASAP -->
+    <script defer src="{{ site.baseurl }}/js/music-status.js"></script>
+
     <title>{{ title }}</title>
   </head>
   <body>
   {{ content }}
   <script src="{{ site.baseurl }}/js/profile-icons.js"></script>
-  <script src="{{ site.baseurl }}/js/music-status.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
