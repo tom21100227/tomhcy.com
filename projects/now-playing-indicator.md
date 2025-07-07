@@ -3,8 +3,7 @@ layout: project
 type: project
 image: img/now-playing-indicator/now-playing-api-dashboard.png
 title: "Now Playing API"
-startDate: 2025
-date: present
+date: 2025
 published: true
 labels:
   - Web Development
