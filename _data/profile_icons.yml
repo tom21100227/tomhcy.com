@@ -20,3 +20,10 @@
   opacity: 1
   circle: '#ffffff'
   url: 'https://en.wikipedia.org/wiki/Cricket'
+- src: 'https://placehold.co/500'
+  alt: 'Album Cover'
+  scale: 1.5
+  angle: 40deg
+  delay: 0.5s # Album cover loads pretty slowly, so we delay it a bit
+  opacity: 1
+  url: '#'
