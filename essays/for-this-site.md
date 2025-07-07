@@ -23,15 +23,17 @@ This is sort of like a changelog for this site, but also just wanted to document
 
 I liked iOS's beautiful animation in the iCloud settings page, where icons of iCloud services revolves around your profile picture. I wanted to recreate that effect, but in the context of my portofolio where some important steps of my life revolve around my profile picture. Some vibe-coding with Codex later and I ended up with a good starting point not having to deal with jekyll's Liquid templating language. 
 
+{% raw %}
 ```html
-\{\% for icon in site.data.profile_icons \%\}
+{% for icon in site.data.profile_icons %}
 <a href="{{ icon.url | default: '#' }}" class="profile-icon{% if icon.circle %} circle{% endif %}"
 data-scale="{{ icon.scale }}"
 style="--angle: {{ icon.angle }}; animation-delay: {{ icon.delay }}; --end-opacity: {{ icon.opacity | default: 1 }};{% if icon.circle %} --circle-color: {{ icon.circle }};{% endif %}">
-<img src="{{ icon.src | prepend: site.baseurl }}" alt="{{ icon.alt }}">
+    <img src="{{ icon.src | prepend: site.baseurl }}" alt="{{ icon.alt }}">
 </a>
-\{\% endfor \%\}
+{% endfor %}
 ```
+{% endraw %}
 
 Not the biggest JavaScript fan here, so I opted for a CSS solution on the animation part. With a bit of CSS magic, and tweaking the animation speed function and position, I was able to achieve a similar effect.
 
@@ -76,3 +78,23 @@ I mean, what is a website in 2025 without darkmode? This was quite easy, with a 
     ...
 }
 ```
+
+## Misc features
+
+### Project Page Logic
+
+Some of my projects are long-term projects, spanning multiple years. I wanted to be able to sort them by the year they started, and also show the current year if it's still ongoing. I added a `start_date` property to my project data so that I can display the year they started. To make sure this does not break existing projects that lasted less than a year, `date` is still used and is used to sort the projects, with `start_date` being a tie breaker. 
+
+### Last Updated for Writings
+
+I wanted to add a "Last Updated" date to my writings/essays that are more of a blog. Similar to project page logic, I added a `last_updated` property to my essay data, and updated the essay layout to display it if it exists.
+
+{% raw %}
+```html
+{%- if include.page.last_updated -%}
+    Updated {{ include.page.last_updated | date_to_string }}
+{%- else -%}
+    {{ include.page.date | date_to_string }}
+{%- endif -%}
+```
+{% endraw %}
