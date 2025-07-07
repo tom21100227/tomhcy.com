@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function(res) { return res.json(); })
     .then(function(data) {
       if (!data.success) {
+        console.error('Music API Error:', data.error);
         statusEl.textContent = 'Not Listening To Anything :(';
         return;
       }
