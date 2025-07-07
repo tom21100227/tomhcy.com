@@ -12,6 +12,21 @@ labels:
 
 This is sort of like a changelog for this site, but also just wanted to document how I did some of the things.  
 
+## Now Playing Indicator
+
+I wanted to show some personality with what kind of music I am listening to, so I added a "Now Playing" indicator to the top of the page. I built my personal music API endpoint with Cloudflare Workers which fetches the current playing song from my Spotify account. Thankfully with [HealthViz](/projects/healthviz.html) I already have an Apple Developer account to use MusicKit for Apple Music. 
+
+This has evolved into a distinct project for me, so check it out about it in my [Now Playing API project](/projects/now-playing-indicator.html).
+
+### How it works
+
+Spotify is quite straightforward, it tells you if the user is currently listening to something, and if so, it returns the currently playing song. If not, it returns an empty response. However, Apple Music is quite privacy sensitive, and it only tells you what the user recently listened to. There's no clue on whether the user is currently listening to something or not. So I had to implement some logic to determine if the user is currently listening to something.
+
+<img src="/img/now-playing-indicator/api-workflow.png" alt="Now Playing API Logic" style="max-width: 100%; height: auto;">
+
+In the front end, some minimal JS is used to fetch the API endpoint and display the currently playing song. It also handles the case where the user is not currently listening to anything, and displays a default message instead. Thanks to my addition of profile picture animation, I can also display the currently playing song's album cover as an icon around my profile picture. I purposefully made it so that the album cover appears after a 0.5 second delay, to give my worker enough time to respond and fetch the currently playing song. 
+
+
 ## Profile Picture Animation
 
 <div style="max-width: 50%; margin: 0 auto;">

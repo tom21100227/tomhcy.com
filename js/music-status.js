@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var albumLink = albumImg ? albumImg.parentElement : null;
   statusEl.innerHTML = '<div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Loading...</span></div> Loading...';
 
-  fetch('https://music-api.tomhcy.workers.dev/')
+  fetch('https://music-api.tomhcy.workers.dev/?noCache=true')
     .then(function(res) { return res.json(); })
     .then(function(data) {
       if (!data.success) {
