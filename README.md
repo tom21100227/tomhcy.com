@@ -9,6 +9,7 @@ Changes made from the original TechFolios template include:
 - Implemented dark mode
 - Refine the project page logic to include years long project and sort accordingly
 - Added a "Last Updated" date to writings/essays that are more of a blog. 
+- Added a "Now Playing" feature with [Now Playing API](https://github.com/tom21100227/now-playing-api)
 
 TODO:
 
