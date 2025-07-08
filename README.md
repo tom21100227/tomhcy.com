@@ -17,4 +17,6 @@ TODO:
 
 - Maybe change writing to something else
 - Visitor counter (distinct visitors and page views I guess)
+- Badges/Pills that represents a coding language should change color based on the language and have a little icon along with it. 
+  - Once that's done, I can add a filtering system to filter by language. 
 
