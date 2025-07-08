@@ -44,8 +44,8 @@ a {
 }
 
 .music-status-container:hover .music-status-info {
-            display: block !important;
-          }
+  display: block !important;
+}
 
 /* Simplify the styling of the bottom of Essay cards. */
 .card-footer {
@@ -55,45 +55,50 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Base Colors */
     --bs-body-bg: #121212;
     --bs-body-color: #e0e0e0;
-    --bs-light-rgb: 33,37,41;
+
+    /* Elevated Surface Colors */
+    --tf-surface-bg-color: #1c1c1c;
+
+    /* Links */
     --bs-link-color: #58a6ff;
     --bs-link-hover-color: #1f6feb;
+
+    /* Icons */
     --tf-icon-fill: var(--bs-gray-200);
     --tf-icon-hover: var(--bs-gray-400);
+
+    /* Page Sections */
     --tf-page-bg-color: var(--bs-body-bg);
-    --tf-dark-bg-color: #1c1c1c;
-    --tf-footer-bg-color: var(--tf-dark-bg-color);
-    --tf-projects-bg-color: var(--tf-dark-bg-color);
-    --tf-essays-bg-color: var(--tf-dark-bg-color);
+    --tf-footer-bg-color: var(--tf-surface-bg-color);
+    --tf-projects-bg-color: var(--tf-surface-bg-color);
+    --tf-essays-bg-color: var(--tf-surface-bg-color);
+
+    /* Bootstrap Component Overrides */
+    --bs-light-rgb: 33,37,41;
     --bs-gradient: none;
+    --bs-card-bg: var(--tf-surface-bg-color);
   }
 
   body {
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
   }
-
-  .navbar-light .navbar-nav .nav-link:hover,
-  .navbar-light .navbar-brand:hover {
-    color: #fff;
-  }
-
+  
   .navbar {
-    --bs-navbar-color:  rgba(230, 230, 230, 0.75);
-    --bs-navbar-brand-color: rgba(230, 230, 230, 0.75);
+    /* Set background to be fully transparent to let body background show through */
     --bs-bg-opacity: 0;
+    --bs-navbar-color: rgba(230, 230, 230, 0.75);
+    --bs-navbar-brand-color: var(--bs-navbar-color);
+    --bs-navbar-hover-color: #fff;
   }
 
   footer.navbar {
     color: rgba(255, 255, 255, 0.75);
   }
 
-  .card {
-    --bs-card-bg: #4a4a4a;
-  }
-  
   .text-muted {
     color: rgba(255, 255, 255, 0.5) !important;
   }
@@ -103,7 +108,12 @@ a {
     border-color: var(--bs-body-color);
   }
 
+  .card {
+    --bs-card-bg: var(--bs-body-bg);
+  }
+
   .card-footer {
+    /* Ensure footer inherits the card's background color */
     background-color: var(--bs-card-bg);
   }
 }
