@@ -13,6 +13,7 @@
   --tf-page-bg-color: var(--bs-white);
   --tf-footer-bg-color: var(--bs-gray-200);
   --tf-projects-bg-color: var(--bs-gray-100);
+  --tf-card-hover-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Format social media icons */
@@ -92,6 +93,18 @@ a {
   }
 }
 
+.card:hover {
+  box-shadow: 2px 2px 8px var(--tf-card-hover-shadow-color);
+}
+
+.card:hover .text-muted {
+  color: var(--bs-navbar-hover-color) !important;
+}
+
+.card:hover .card-title {
+  text-decoration: underline;
+  /* color: var(--bs-link-hover-color) !important; */
+}
 
 .project-date {
   white-space: nowrap;
@@ -105,6 +118,7 @@ a {
 
     /* Elevated Surface Colors */
     --tf-surface-bg-color: #1c1c1c;
+    --tf-card-hover-shadow-color: rgba(1, 1, 1, 0.5);
 
     /* Links */
     --bs-link-color: #58a6ff;
