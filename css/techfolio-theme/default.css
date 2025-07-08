@@ -97,6 +97,8 @@ a {
     --bs-navbar-color: rgba(230, 230, 230, 0.75);
     --bs-navbar-brand-color: var(--bs-navbar-color);
     --bs-navbar-hover-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-border-color: var(--bs-gray-500);
   }
 
   footer.navbar {
