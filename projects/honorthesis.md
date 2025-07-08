@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: img/honorthesis/FinalPoster.png
-title: "Exploring Neuroplasticity in <i>G. bimaculatus</i> Through Machine Learning"
+title: "Exploring Neuroplasticity Through Machine Learning"
 startDate: 2022
 date: 2025
 published: true
@@ -11,7 +11,7 @@ labels:
   - Ethology
   - Deep Learning
   - Bioinformatics
-summary: "My undergraduate honors thesis, applies deep learning analysis methods like computer vision to study ethology in crickets for neuroscience research."
+summary: "My undergraduate honors thesis, applies deep learning analysis methods to study ethology in crickets (<i>G. bimaculatus</i>) for neuroscience research."
 ---
 
 <img src="/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid w-100">
