@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var prefix = data.isPlaying ? 'Now Listening To' : 'Recently Listened To';
     var link = '<a href="' + data.songUrl + '" target="_blank">' + data.title + '</a>';
     var sourceIcon = data.source === 'Apple Music' ? appleMusicIcon : spotifyIcon;
-    statusEl.innerHTML = prefix + ': ' + link + ' by ' + data.artist + ' on ' + data.source + ' ' + sourceIcon + '.';
+    statusEl.innerHTML = prefix + ': ' + link + ' by ' + data.artist + ' on ' + data.source + ' ' + sourceIcon;
     if (albumImg) albumImg.src = data.albumImageUrl;
     if (albumLink) albumLink.href = data.songUrl;
   });
