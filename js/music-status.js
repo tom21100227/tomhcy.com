@@ -28,7 +28,36 @@ document.addEventListener('DOMContentLoaded', function () {
     var link = '<a href="' + data.songUrl + '" target="_blank">' + data.title + '</a>';
     var sourceIcon = data.source === 'Apple Music' ? appleMusicIcon : spotifyIcon;
     statusEl.innerHTML = prefix + ': ' + link + ' by ' + data.artist + ' on ' + data.source + ' ' + sourceIcon;
-    if (albumImg) albumImg.src = data.albumImageUrl;
     if (albumLink) albumLink.href = data.songUrl;
+    // 1. Define the function to set the pulse color
+    function setPulseColor(imageElement) {
+      // Use a try-catch to prevent errors if ColorThief fails
+      try {
+        const colorThief = new ColorThief();
+        const dominantColor = colorThief.getColor(imageElement);
+        imageElement.style.setProperty(
+          '--pulse-color', 
+          `rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.3)`
+        );
+      } catch (e) {
+        console.error("ColorThief error:", e);
+      }
+    }
+    
+    // 2. Set up an event listener for when the album image loads
+    if (albumImg) {
+      albumImg.crossOrigin = 'Anonymous'; 
+      if (albumImg) albumImg.src = data.albumImageUrl;
+      albumImg.addEventListener('load', function() {
+        // Only add the pulsing class and set the color if the song is playing
+        if (data.isPlaying) {
+          setPulseColor(albumImg);
+          albumImg.classList.add('pulsing-img');
+        } else {
+          // Ensure pulsing is removed if the song is not playing
+          albumImg.classList.remove('pulsing-img');
+        }
+      });
+    }
   });
 });

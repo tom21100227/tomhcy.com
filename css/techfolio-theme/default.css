@@ -106,6 +106,29 @@ a {
   /* color: var(--bs-link-hover-color) !important; */
 }
 
+.pulsing-img {
+  --pulse-color: rgba(30, 30, 30, 0.8);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--pulse-color);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.0);
+  }
+}
+
 .project-date {
   white-space: nowrap;
 }
