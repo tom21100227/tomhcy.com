@@ -10,9 +10,11 @@ Changes made from the original TechFolios template include:
 - Refine the project page logic to include years long project and sort accordingly
 - Added a "Last Updated" date to writings/essays that are more of a blog. 
 - Added a "Now Playing" feature with [Now Playing API](https://github.com/tom21100227/now-playing-api)
+- Reworked card layout to adapt for mobile interface and support non-square images.
+- Added a "Last Updated" badge to the footer
 
 TODO:
 
 - Maybe change writing to something else
-- Rework card layout to adapt for mobile interface and support image cropping.
+- Visitor counter (distinct visitors and page views I guess)
 
