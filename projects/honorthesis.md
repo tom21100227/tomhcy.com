@@ -14,7 +14,7 @@ labels:
 summary: "My undergraduate honors thesis, applies deep learning analysis methods like computer vision to study ethology in crickets for neuroscience research."
 ---
 
-<img src="{{ site.baseurl }}/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid">
+<img src="/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid w-100">
 
 # Introduction
 
