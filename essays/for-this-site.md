@@ -2,12 +2,13 @@
 layout: essay
 type: essay
 title: "Things I've done for this site, and how I did them"
-# All dates must be YYYY-MM-DD format!
 date: 2025-07-06
 last_updated: 2025-07-07
 published: true
 labels:
   - Web Development
+  - Frontend
+  - Serverless
 ---
 
 This is sort of like a changelog for this site, but also just wanted to document how I did some of the things.  

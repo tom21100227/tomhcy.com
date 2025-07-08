@@ -7,6 +7,8 @@ startDate: 2022
 date: 2025
 published: true
 labels:
+  - Python
+  - R
   - Computational Biology
   - Ethology
   - Deep Learning

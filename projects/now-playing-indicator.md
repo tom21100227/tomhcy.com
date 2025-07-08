@@ -6,6 +6,7 @@ title: "Now Playing API"
 date: 2025
 published: true
 labels:
+  - TypeScript
   - Web Development
   - Cloud Services
   - Cloudflare Workers
