@@ -14,4 +14,5 @@ Changes made from the original TechFolios template include:
 TODO:
 
 - Maybe change writing to something else
+- Rework card layout to adapt for mobile interface and support image cropping.
 
