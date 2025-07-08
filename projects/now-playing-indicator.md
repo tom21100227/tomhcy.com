@@ -16,6 +16,8 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
 
 This project is on GitHub: [tom21100227/now-playing-api](https://github.com/tom21100227/now-playing-api)
 
+[See it in action on this website.](https://tomhcy.com/)
+
 This project started with a simple idea: to show what music I am currently listening to on this website. Inspired by [mdrxy.com](https://mdrxy.com), they used last.fm's public API, however I am not a last.fm user, so I wanted to use my own music data from Spotify and Apple Music without giving permission to any third party.
 
 This is a simple API using Cloudflare Workers that fetches the currently playing song from my Spotify account and Apple Music, with logics and caching to determine which one is played more recent, and serves it to the website. It always feels nice knowing my data is only flowing through my code. 
