@@ -26,4 +26,6 @@ This is a simple API using Cloudflare Workers that fetches the currently playing
 
 ## How the API logic works: 
 
-<img src="/img/now-playing-indicator/api-workflow.png" alt="Now Playing API Logic" style="max-width: 100%; height: auto;">
+<div class="col-12 col-lg-10 mx-auto my-3">
+  <img src="/img/now-playing-indicator/api-workflow.png" alt="Now Playing API Logic" class="img-fluid rounded">
+</div>
