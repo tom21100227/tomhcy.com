@@ -22,18 +22,22 @@ This has evolved into a distinct project for me, so check it out about it in my 
 
 Spotify is quite straightforward, it tells you if the user is currently listening to something, and if so, it returns the currently playing song. If not, it returns an empty response. However, Apple Music is quite privacy sensitive, and it only tells you what the user recently listened to. There's no clue on whether the user is currently listening to something or not. So I had to implement some logic to determine if the user is currently listening to something.
 
-<img src="/img/now-playing-indicator/api-workflow.png" alt="Now Playing API Logic" style="max-width: 100%; height: auto;">
+<div class="col-12 col-lg-8 mx-auto my-3">
+  <img src="/img/now-playing-indicator/api-workflow.png" alt="Now Playing API Logic" class="img-fluid rounded">
+</div>
 
 In the front end, some minimal JS is used to fetch the API endpoint and display the currently playing song. It also handles the case where the user is not currently listening to anything, and displays a default message instead. Thanks to my addition of profile picture animation, I can also display the currently playing song's album cover as an icon around my profile picture. I purposefully made it so that the album cover appears after a 0.5 second delay, to give my worker enough time to respond and fetch the currently playing song. 
 
 
 ## Profile Picture Animation
 
-<div style="max-width: 50%; margin: 0 auto;">
-    <video autoplay muted playsinline onended="this.pause();" preload="auto" style="width: 100%; height: auto;">
-        <source src="../img/for-this-site/icloud_animation.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+<div class="col-12 col-lg-8 mx-auto my-1">
+  <div class="ratio ratio-16x9" style="max-height: 50vh;">
+    <video class="rounded" autoplay muted playsinline onended="this.pause();" preload="auto" style="object-fit: contain;">
+      <source src="../img/for-this-site/icloud_animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
+  </div>
 </div>
 
 I liked iOS's beautiful animation in the iCloud settings page, where icons of iCloud services revolves around your profile picture. I wanted to recreate that effect, but in the context of my portofolio where some important steps of my life revolve around my profile picture. Some vibe-coding with Codex later and I ended up with a good starting point not having to deal with jekyll's Liquid templating language. 
