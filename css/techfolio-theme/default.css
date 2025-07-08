@@ -92,10 +92,15 @@ a {
   object-position: top left;
   }
 }
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
 
 .card:hover {
   box-shadow: 2px 2px 8px var(--tf-card-hover-shadow-color);
+  transform: scale(1.02);
 }
+
 
 .card:hover .text-muted {
   color: var(--bs-navbar-hover-color) !important;
