@@ -86,9 +86,9 @@ a {
   }
 
   .project-card-img {
-  width: 100%;
+  width: auto;
   height: 225px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: top left;
   }
 }
