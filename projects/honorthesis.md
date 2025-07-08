@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: img/honorthesis/FinalPoster.png
-title: "Exploring Compensatory Neuroplasticity in <i>G. bimaculatus</i> Through Machine Learning-Driven Analysis"
+title: "Exploring Neuroplasticity in <i>G. bimaculatus</i> Through Machine Learning"
 startDate: 2022
 date: 2025
 published: true

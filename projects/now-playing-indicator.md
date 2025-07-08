@@ -10,6 +10,7 @@ labels:
   - Cloud Services
   - Cloudflare Workers
   - Music
+summary: "A serverless API that fetches my currently playing song from Spotify and Apple Music, deployed with Cloudflare Workers."
 # projecturl: "https://github.com/tom21100227/now-playing-api"
 ---
 
