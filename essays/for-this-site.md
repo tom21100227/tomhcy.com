@@ -3,7 +3,7 @@ layout: essay
 type: essay
 title: "Things I've done for this site, and how I did them"
 date: 2025-07-06
-last_updated: 2025-07-07
+last_updated: 2025-07-08
 published: true
 labels:
   - Web Development
@@ -105,16 +105,42 @@ I mean, what is a website in 2025 without darkmode? This was quite easy, with a 
 
 Some of my projects are long-term projects, spanning multiple years. I wanted to be able to sort them by the year they started, and also show the current year if it's still ongoing. I added a `start_date` property to my project data so that I can display the year they started. To make sure this does not break existing projects that lasted less than a year, `date` is still used and is used to sort the projects, with `start_date` being a tie breaker. 
 
-### Last Updated for Writings
-
-I wanted to add a "Last Updated" date to my writings/essays that are more of a blog. Similar to project page logic, I added a `last_updated` property to my essay data, and updated the essay layout to display it if it exists.
-
 {% raw %}
-```html
-{%- if include.page.last_updated -%}
-    Updated {{ include.page.last_updated | date_to_string }}
-{%- else -%}
-    {{ include.page.date | date_to_string }}
-{%- endif -%}
+```yml
+---
+layout: project
+type: project
+image: img/honorthesis/FinalPoster.png
+title: "Year Long Project"
+startDate: 2022
+date: 2025
+published: true
+labels:
+  ...
+summary: "A very very long project that spans multiple years."
+---
 ```
 {% endraw %}
+
+Would render as `2022 - 2025` in the project page. If the project is still ongoing, it would render as `2022 - Present`. The sorting algorithm is configured to always prefer projects that have `date` as `present` being displayed first. 
+
+### Last Updated for Writings
+
+For writings/essays that receive updates, I added a `last_updated` property to my essay's yml metadata, and updated the essay layout to display it if it exists.
+
+{% raw %}
+```yml
+---
+layout: essay
+type: essay
+title: "title"
+date: 2025-07-06
+last_updated: 2025-07-10
+published: true
+labels:
+  ...
+---
+```
+{% endraw %}
+
+Would render as `Updated: 10 Jul 2025`. 
