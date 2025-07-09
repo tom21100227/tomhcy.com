@@ -216,3 +216,6 @@ a {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+.badge {
+  border: 1px solid transparent
+}
