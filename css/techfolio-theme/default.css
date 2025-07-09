@@ -65,7 +65,7 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, transparent 70%, var(--bs-card-bg) 100%);
+  background-image: linear-gradient(to bottom, transparent 50%, var(--bs-card-bg) 100%);
 }
 
 
