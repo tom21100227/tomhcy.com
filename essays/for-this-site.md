@@ -11,6 +11,7 @@ labels:
   - CSS
   - JavaScript
   - Jekyll
+  - Bootstrap
 ---
 
 This is sort of like a changelog for this site, but also just wanted to document how I did some of the things.  

@@ -208,3 +208,6 @@ jekyll:
 app store:
   color: "#0D96F6"
   icon: "appstore"
+bootstrap:
+  color: "#7952B3"
+  icon: "bootstrap"
