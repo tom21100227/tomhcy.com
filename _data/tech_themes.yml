@@ -23,8 +23,8 @@ html:
   color: "#E34F26"
   icon: "html5"
 css:
-  color: "#1572B6"
-  icon: "css3"
+  color: "#663399"
+  icon: "css"
 java:
   color: "#007396"
   icon: "java"
@@ -49,6 +49,18 @@ kotlin:
 php:
   color: "#777BB4"
   icon: "php"
+r:
+  color: "#276DC3"
+  icon: "r"
+bash:
+  color: "#4EAA25"
+  icon: "gnubash"
+zsh:
+  color: "#F15A24"
+  icon: "zsh"
+sql:
+  color: "#336791"
+  icon: "postgresql"
 docker:
   color: "#2496ED"
   icon: "docker"
@@ -112,9 +124,6 @@ ansys:
 matlab:
   color: "#0076A8"
   icon: "matlab"
-r:
-  color: "#276DC3"
-  icon: "r"
 spss:
   color: "#333333"
   icon: "ibm"
@@ -145,9 +154,57 @@ microsoft-teams:
 flask:
   color: "#3BABC3"
   icon: "flask"
+jupyter:
+  color: "#F37626"
+  icon: "jupyter"
+xcode:
+  color: "#1575F9"
+  icon: "xcode"
+lldb:
+  color: "#262626"
+  icon: "llvm"
+gdb:
+  color: "#A42E2B"
+  icon: "gnu"
+scipy:
+  color: "#8CAAE6"
+  icon: "scipy"
+matplotlib:
+  color: "#11557C"
+  icon: "matplotlib"
+tensorflow:
+  color: "#FF6F00"
+  icon: "tensorflow"
+keras:
+  color: "#D00000"
+  icon: "keras"
+tidyverse:
+  color: "#1A162D"
+  icon: "tidyverse"
+ggplot2:
+  color: "#3B4F75"
+  icon: "ggplot2"
 cloudflare workers:
   color: "#F38020"
   icon: "cloudflare"
 swiftui:
   color: "#FA7343"
   icon: "swift"
+opencv:
+  color: "#5C3EE8"
+  icon: "opencv"
+opengl:
+  color: "#5586A4"
+  icon: "opengl"
+pandas:
+  color: "#150458"
+  icon: "pandas"
+numpy:
+  color: "#013243"
+  icon: "numpy"
+jekyll:
+  color: "#CC0000"
+  icon: "jekyll"
+app store:
+  color: "#0D96F6"
+  icon: "appstore"

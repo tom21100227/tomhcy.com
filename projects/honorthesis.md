@@ -9,6 +9,7 @@ published: true
 labels:
   - Python
   - R
+  - PyTorch
   - Computational Biology
   - Ethology
   - Deep Learning

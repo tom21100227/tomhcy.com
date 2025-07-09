@@ -7,8 +7,10 @@ last_updated: 2025-07-08
 published: true
 labels:
   - Web Development
-  - Frontend
-  - Serverless
+  - HTML
+  - CSS
+  - JavaScript
+  - Jekyll
 ---
 
 This is sort of like a changelog for this site, but also just wanted to document how I did some of the things.  
