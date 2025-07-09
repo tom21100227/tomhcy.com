@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/astar-viz/demo.png
+image: img/astar-viz/demo_compressed.png
 title: "A* Visualization"
 date: 2024
 published: true

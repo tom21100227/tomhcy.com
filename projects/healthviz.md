@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/healthviz/healthviz_icon.png
+image: img/healthviz/healthviz_icon_compressed.png
 title: "HealthViz"
 startDate: 2025
 date: present

@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/now-playing-indicator/now-playing-api-dashboard.png
+image: img/now-playing-indicator/now-playing-api-dashboard_compressed.png
 title: "Now Playing API"
 date: 2025
 published: true

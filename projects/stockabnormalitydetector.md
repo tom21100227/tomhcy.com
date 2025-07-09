@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/stock-abnormality-detector/poster.png
+image: img/stock-abnormality-detector/poster_compressed.png
 title: "Stock Abnormality Detector"
 date: 2024
 published: true

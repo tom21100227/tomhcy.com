@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/honorthesis/FinalPoster.png
+image: img/honorthesis/FinalPoster_compressed.png
 title: "Exploring Neuroplasticity Through Machine Learning"
 startDate: 2022
 date: 2025
