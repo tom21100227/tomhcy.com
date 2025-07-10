@@ -12,7 +12,7 @@
   delay: 0.05s
   opacity: 1
   url: 'https://www.salk.edu/'
-- src: 'https://placehold.co/500'
+- src: '/img/album_cover_placeholder.svg'
   alt: 'Album Cover'
   scale: 1.5
   angle: 40deg
