@@ -32,6 +32,7 @@ GEM
       logger
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
+    fastimage (2.4.0)
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-aarch64-linux-musl)
     ffi (1.17.2-arm-linux-gnu)
@@ -201,6 +202,7 @@ PLATFORMS
 DEPENDENCIES
   base64
   csv
+  fastimage
   html-proofer
   jekyll (~> 4.3.3)
   jekyll-gist

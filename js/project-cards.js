@@ -11,12 +11,6 @@
         img.classList.add('rounded-top');
         img.classList.remove('rounded-start', 'rounded');
       }
-
-      if (mq.matches && img.naturalWidth > img.naturalHeight) {
-        c.classList.add('wide');
-      } else {
-        c.classList.remove('wide');
-      }
     });
   }
   if (document.readyState === 'complete') {

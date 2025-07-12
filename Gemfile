@@ -14,3 +14,4 @@ gem 'jekyll-gist'
 gem 'rouge'
 gem "csv"
 gem "base64"
+gem "fastimage"
