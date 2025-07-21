@@ -25,5 +25,8 @@ Changes made from the original TechFolios template include:
 TODO:
 
 - Visitor counter (distinct visitors and page views I guess)
-- Add a filter for projects to filter by language. 
+- Add a filter for projects to filter by (programming) language.
+- Add a Chinese (Simplified) Version, and the corresponding language toggle.
+- AI Summary For Projects (cuz everyone loves that)
+
 
