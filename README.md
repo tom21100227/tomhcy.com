@@ -21,6 +21,7 @@ Changes made from the original TechFolios template include:
     - Badges/Pills that represents a coding language/technology change color based on the language and have a little icon along with it. 
 - **Miscellaneous**
     - Added a "Last Updated" badge to the footer to indicate when the site was last updated.
+    - Removed unnecessary home button on homepage per @mdrxy 's request.^[Which is greatly appreciated.]
 
 TODO:
 
