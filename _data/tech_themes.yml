@@ -73,9 +73,11 @@ aws:
 azure:
   color: "#0078D4"
   icon: "microsoftazure"
-gcp:
+gcp: &gcp_config
   color: "#4285F4"
   icon: "googlecloud"
+google cloud compute: *gcp_config
+google cloud platform: *gcp_config
 git:
   color: "#F05032"
   icon: "git"
@@ -211,3 +213,9 @@ app store:
 bootstrap:
   color: "#7952B3"
   icon: "bootstrap"
+langchain:
+  color: "#1C3C3C"
+  icon: "langchain"
+ollama:
+  color: "#000000"
+  icon: "ollama"

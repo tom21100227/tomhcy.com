@@ -28,5 +28,7 @@ TODO:
 - Add a filter for projects to filter by (programming) language.
 - Add a Chinese (Simplified) Version, and the corresponding language toggle.
 - AI Summary For Projects (cuz everyone loves that)
+- Profile Icons with the latest project that I am working on. 
+- Make my cool adaptive badge/pill system more generic so that I can use it for other things.
 
 
