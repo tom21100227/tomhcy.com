@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 d-flex align-items-center justify-content-center">
         <div class="profile-wrapper">
-          <img width="300px" src="{{ site.data.bio.basics.picture }}" class="d-block mx-auto rounded-circle">
+          <img width="300px" src="{{ site.data.bio.basics.picture }}" class="d-block mx-auto rounded-circle" alt="A picture of {{ site.data.bio.basics.name }}">
           {% for icon in site.data.profile_icons %}
           <a href="{{ icon.url | default: '#' }}" class="profile-icon{% if icon.circle %} circle{% endif %}"
             data-scale="{{ icon.scale }}"
