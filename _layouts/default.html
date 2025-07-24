@@ -11,6 +11,8 @@
   {%- endif -%}
   {%- if page.description -%}
     {%- assign description = page.description -%}
+  {%- elsif page.excerpt -%}
+    {%- assign description = page.excerpt | strip_html | truncate: 160 -%}
   {%- endif -%}
 {%- endif -%}
 
