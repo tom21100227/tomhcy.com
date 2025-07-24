@@ -38,6 +38,8 @@
     <script defer src="{{ site.baseurl }}/js/profile-icons.js"></script>
     <script defer src="{{ site.baseurl }}/js/name-cycler.js"></script>
     <!-- Add other home-page-specific preloads here -->
+    <link rel="stylesheet" href="{{ site.baseurl}}/css/profile-icons.css">
+    <link rel="stylesheet" href="{{ site.baseurl}}/css/contrast-utils.css">
     {% endif %}
     
     <!-- Preconnect to Google Fonts for faster font loading -->
@@ -54,8 +56,6 @@
     
     <!-- Critical CSS (will be inlined by build process in production) -->
     <link rel="stylesheet" href="{{ site.baseurl}}/css/techfolio-theme/{{ site.techfolio-theme}}">
-    <link rel="stylesheet" href="{{ site.baseurl}}/css/profile-icons.css">
-    <link rel="stylesheet" href="{{ site.baseurl}}/css/contrast-utils.css">
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/rouge/{{ site.rouge-theme}}">
     <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
     {% if site.mathjax %}

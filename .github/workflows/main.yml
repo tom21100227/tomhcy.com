@@ -63,11 +63,17 @@ jobs:
             fi
           done
           
-          # Minify JS files before Jekyll processes them (with safer options)
+          # Minify JS files before Jekyll processes them (with very safe options and verbose logging)
           find js -name "*.js" -not -path "*node_modules*" | while read file; do
             if [ -f "$file" ]; then
               echo "Minifying JS: $file"
-              terser "$file" --compress drop_console=false,drop_debugger=false --mangle reserved=['API_URL','musicDataPromise'] --keep-fnames --output "$file"
+              echo "Original file content preview:"
+              head -3 "$file"
+              # Use very conservative minification to avoid breaking URLs
+              terser "$file" --compress sequences=false,conditionals=false,comparisons=false,evaluate=false,booleans=false,loops=false,unused=false,hoist_funs=false,keep_fargs=true,hoist_vars=false,if_return=false,join_vars=false,cascade=false,collapse_vars=false,reduce_vars=false,warnings=false,negate_iife=false,pure_getters=false,pure_funcs=null,drop_console=false,drop_debugger=false,keep_fnames=true --mangle false --keep-fnames --verbose --output "$file"
+              echo "Minified file content preview:"
+              head -3 "$file"
+              echo "---"
             fi
           done
           
@@ -77,29 +83,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Post-build Asset Cleanup
-        run: |
-          echo "🧹 Starting post-build cleanup..."
-          
-          # Only minify any remaining standalone files that weren't inlined
-          # (like external CDN fallbacks or files not processed by the inliner)
-          find _site -name "*.css" -not -path "*node_modules*" | while read file; do
-            if [ -f "$file" ] && [ -s "$file" ]; then
-              echo "Post-processing CSS: $file"
-              csso "$file" --output "$file"
-            fi
-          done
-          
-          find _site -name "*.js" -not -path "*node_modules*" | while read file; do
-            if [ -f "$file" ] && [ -s "$file" ]; then
-              echo "Post-processing JS: $file"
-              terser "$file" --compress --mangle --output "$file"
-            fi
-          done
-          
-          # Generate optimization report
-          echo "📊 Final site size: $(du -sh _site | cut -f1)"
-          echo "✅ Post-build cleanup completed!"
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
