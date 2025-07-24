@@ -51,43 +51,55 @@ jobs:
       - name: Install optimization tools
         run: |
           npm install -g csso-cli terser
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-      - name: Advanced Asset Optimization
+      - name: Pre-build Asset Optimization
         run: |
-          echo "🚀 Starting advanced asset optimization..."
+          echo "🚀 Starting pre-build asset optimization..."
           
-          # Create backup
-          cp -r _site _site_backup
-          
-          # Advanced CSS minification for remaining external files
-          find _site -name "*.css" -not -path "*node_modules*" | while read file; do
+          # Minify CSS files before Jekyll processes them
+          find css -name "*.css" -not -path "*node_modules*" | while read file; do
             if [ -f "$file" ]; then
               echo "Minifying CSS: $file"
               csso "$file" --output "$file"
             fi
           done
           
-          # Advanced JS minification for remaining external files  
-          find _site -name "*.js" -not -path "*node_modules*" | while read file; do
+          # Minify JS files before Jekyll processes them
+          find js -name "*.js" -not -path "*node_modules*" | while read file; do
             if [ -f "$file" ]; then
               echo "Minifying JS: $file"
               terser "$file" --compress --mangle --output "$file"
             fi
           done
           
+          echo "✅ Pre-build asset optimization completed!"
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Post-build Asset Cleanup
+        run: |
+          echo "🧹 Starting post-build cleanup..."
+          
+          # Only minify any remaining standalone files that weren't inlined
+          # (like external CDN fallbacks or files not processed by the inliner)
+          find _site -name "*.css" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ] && [ -s "$file" ]; then
+              echo "Post-processing CSS: $file"
+              csso "$file" --output "$file"
+            fi
+          done
+          
+          find _site -name "*.js" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ] && [ -s "$file" ]; then
+              echo "Post-processing JS: $file"
+              terser "$file" --compress --mangle --output "$file"
+            fi
+          done
+          
           # Generate optimization report
-          echo "📊 Optimization Report:"
-          echo "Original size: $(du -sh _site_backup | cut -f1)"
-          echo "Optimized size: $(du -sh _site | cut -f1)"
-          
-          # Cleanup backup
-          rm -rf _site_backup
-          
-          echo "✅ Asset optimization completed!"
+          echo "📊 Final site size: $(du -sh _site | cut -f1)"
+          echo "✅ Post-build cleanup completed!"
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
