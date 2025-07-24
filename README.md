@@ -19,6 +19,12 @@ Changes made from the original TechFolios template include:
     - [Refine the project page logic to include years long project and sort accordingly](https://tomhcy.com/essays/for-this-site.html#project-page-logic)
     - Reworked card layout to adapt for mobile interface and support non-square images.
     - Badges/Pills that represents a coding language/technology change color based on the language and have a little icon along with it. 
+- **Accessibility**
+    - Badges/Pills with brand color that have low contrast with the background will have a contrasting border to improve visibility, in compliance with WCAG 2.1 AA standards.
+    - Using `prefer-contrast` CSS media query to detect if the user prefers high contrast mode, and adjust the styles to be in compliance with WCAG AAA standards.
+- **Performance**
+    - Smart prefetching and lazy loading of images to improve performance.
+    - With GitHub Actions, the site inlines critical CSS and minified JavaScript to reduce render-blocking resources.
 - **Miscellaneous**
     - Added a "Last Updated" badge to the footer to indicate when the site was last updated.
     - Removed unnecessary home button on homepage per [@mdrxy](https://github.com/mdrxy) 's request.[^1]

@@ -1,0 +1,22 @@
+{
+  "name": "tomhcy-website",
+  "version": "1.0.0",
+  "description": "Tom Han Chongye's personal website built with Jekyll",
+  "private": true,
+  "scripts": {
+    "optimize": "echo 'Optimization handled by GitHub Actions'",
+    "dev": "bundle exec jekyll serve --watch --incremental",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build"
+  },
+  "devDependencies": {
+    "csso-cli": "^4.0.1",
+    "terser": "^5.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tom21100227/tomhcy.com.git"
+  },
+  "keywords": ["jekyll", "website", "portfolio"],
+  "author": "Tom Han Chongye",
+  "license": "MIT"
+}

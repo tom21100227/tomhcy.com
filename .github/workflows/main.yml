@@ -44,11 +44,50 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install optimization tools
+        run: |
+          npm install -g csso-cli terser
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Advanced Asset Optimization
+        run: |
+          echo "🚀 Starting advanced asset optimization..."
+          
+          # Create backup
+          cp -r _site _site_backup
+          
+          # Advanced CSS minification for remaining external files
+          find _site -name "*.css" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ]; then
+              echo "Minifying CSS: $file"
+              csso "$file" --output "$file"
+            fi
+          done
+          
+          # Advanced JS minification for remaining external files  
+          find _site -name "*.js" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ]; then
+              echo "Minifying JS: $file"
+              terser "$file" --compress --mangle --output "$file"
+            fi
+          done
+          
+          # Generate optimization report
+          echo "📊 Optimization Report:"
+          echo "Original size: $(du -sh _site_backup | cut -f1)"
+          echo "Optimized size: $(du -sh _site | cut -f1)"
+          
+          # Cleanup backup
+          rm -rf _site_backup
+          
+          echo "✅ Asset optimization completed!"
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
