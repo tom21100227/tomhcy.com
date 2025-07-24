@@ -51,7 +51,8 @@
 }
 
 /* Ensure picture elements maintain consistent height and alignment */
-.badge-high-contrast picture {
+.badge-high-contrast picture,
+.badge-standard-contrast picture {
   display: inline-block;
   height: 1em !important;
   width: 1em !important;
@@ -60,7 +61,8 @@
 }
 
 /* Ensure source elements don't affect layout */
-.badge-high-contrast picture source {
+.badge-high-contrast picture source,
+.badge-standard-contrast picture source {
   display: contents;
 }
 

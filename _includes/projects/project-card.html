@@ -26,36 +26,7 @@
         <p class="card-text">{{ include.page.summary }}</p>
         <p>
           {% for label in include.page.labels %}
-            {% assign stripped_label = label | strip | downcase %}
-            {% assign tech_info = site.data.tech_themes[stripped_label] %}
-            {% if tech_info and tech_info != empty %}
-            {% assign standard_color = tech_info.color | ensure_contrast_standard %}
-            {% assign high_color = tech_info.color | ensure_contrast_high %}
-            {% assign standard_color_dark = tech_info.color | ensure_contrast_dark_standard %}
-            {% assign high_color_dark = tech_info.color | ensure_contrast_dark_high %}
-            {% assign needs_standard = tech_info.color | needs_contrast_adjustment_standard %}
-            {% assign needs_high = tech_info.color | needs_contrast_adjustment_high %}
-            {% assign needs_standard_dark = tech_info.color | needs_contrast_adjustment_dark_standard %}
-            {% assign needs_high_dark = tech_info.color | needs_contrast_adjustment_dark_high %}
-            {% if needs_standard or needs_high or needs_standard_dark or needs_high_dark %}
-            <span class="badge rounded-pill me-1 badge-standard-contrast" style="--badge-standard-color: {{ standard_color }}; --badge-high-color: {{ high_color }}; --badge-original-color: {{ tech_info.color }}; --badge-standard-dark-color: {{ standard_color_dark }}; --badge-high-dark-color: {{ high_color_dark }}; background-color: transparent; border: 1px solid {{ standard_color }}; color: {{ standard_color }};">
-                <picture class="align-middle me-0" style="height: 1em; width: 1em;">
-                  <source media="(prefers-color-scheme: dark) and (prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color_dark | remove_first: '#' }}">
-                  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}">
-                  <source media="(prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color | remove_first: '#' }}">
-                  <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
-                </picture>
-              {{ label }}
-            </span>
-            {% else %}
-            <span class="badge rounded-pill me-1" style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
-                <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ tech_info.color | remove_first: '#' }}" class="align-middle me-0" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
-              {{ label }}
-            </span>
-            {% endif %}
-            {% else %}
-            <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill me-1">{{ label }}</span>
-            {% endif %}
+            {% include badge.html label=label %}
           {% endfor %}
         </p>
       </div>
