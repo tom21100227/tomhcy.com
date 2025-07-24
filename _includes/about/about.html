@@ -3,14 +3,13 @@
     <div class="row">
       <div class="col-lg-4 d-flex align-items-center justify-content-center">
         <div class="profile-wrapper">
-          <picture>
+          <picture aria-label="Profile picture of {{ site.data.bio.basics.name }}">
             <!-- WebP for modern browsers (smaller file size) -->
-            <source srcset="img/me.webp" type="image/webp">
+            <source srcset="img/me.webp" type="image/webp" fetchpriority="high">
             <!-- JPEG fallback for older browsers + right-click save gets original -->
             <img width="300" height="300" src="{{ site.data.bio.basics.picture }}" 
                  class="d-block mx-auto rounded-circle" 
-                 alt="A picture of {{ site.data.bio.basics.name }}" 
-                 fetchpriority="high">
+                 alt="A picture of {{ site.data.bio.basics.name }}">
           </picture>
           {% for icon in site.data.profile_icons %}
           <a href="{{ icon.url | default: '#' }}" class="profile-icon{% if icon.circle %} circle{% endif %}"

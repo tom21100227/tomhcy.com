@@ -41,7 +41,6 @@
     {% if page.url == '/' %}
     <!-- Preload profile picture - WebP for modern browsers, JPEG fallback -->
     <link rel="preload" href="img/me.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="{{ site.data.bio.basics.picture }}" as="image" type="image/jpeg" fetchpriority="high">
     <!-- Preconnect to music API for faster loading -->
     <link rel="preconnect" href="https://music-api.tomhcy.workers.dev">
     <!-- Load music status script early to start API request ASAP -->
