@@ -6,6 +6,40 @@
   color: var(--badge-color) !important;
 }
 
+/* Default standard contrast for better brand preservation */
+.badge-standard-contrast {
+  background-color: var(--badge-bg, transparent) !important;
+  border: 1px solid var(--badge-standard-color) !important;
+  color: var(--badge-standard-color) !important;
+}
+
+/* High contrast mode - activated when user requests increased contrast */
+@media (prefers-contrast: more) {
+  .badge-standard-contrast {
+    /* Switch to high contrast colors when user prefers more contrast */
+    border-color: var(--badge-high-color) !important;
+    color: var(--badge-high-color) !important;
+  }
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  .badge-standard-contrast {
+    /* Use standard dark colors by default */
+    border-color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
+    color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
+  }
+}
+
+/* Dark theme with high contrast */
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  .badge-standard-contrast {
+    /* Use high contrast dark colors when both dark mode and high contrast are requested */
+    border-color: var(--badge-high-dark-color, var(--badge-original-color)) !important;
+    color: var(--badge-high-dark-color, var(--badge-original-color)) !important;
+  }
+}
+
 /* Badge icons use Simple Icons API with direct color parameters via picture elements */
 .badge-icon {
   /* No filters needed - colors are handled by Simple Icons API */
