@@ -20,12 +20,28 @@
         {% assign stripped_label = label | strip | downcase %}
         {% assign tech_info = site.data.tech_themes[stripped_label] %}
         {% if tech_info and tech_info != empty %}
+        {% assign contrast_color = tech_info.color | ensure_contrast %}
+        {% assign contrast_color_dark = tech_info.color | ensure_contrast_dark %}
+        {% assign needs_adjustment = tech_info.color | needs_contrast_adjustment %}
+        {% assign needs_adjustment_dark = tech_info.color | needs_contrast_adjustment_dark %}
+        {% if needs_adjustment or needs_adjustment_dark %}
+        <span class="badge rounded-pill me-1 badge-high-contrast"
+          style="--badge-color: {{ contrast_color }}; --badge-original-color: {{ tech_info.color }}; --badge-dark-color: {{ contrast_color_dark }}; --light-icon-color: {{ contrast_color | remove_first: '#' }}; --dark-icon-color: {{ contrast_color_dark | remove_first: '#' }}; background-color: transparent; border: 1px solid {{ contrast_color }}; color: {{ contrast_color }};">
+            <picture class="align-middle me-0" style="height: 1em; width: 1em;">
+              <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ contrast_color_dark | remove_first: '#' }}">
+              <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ contrast_color | remove_first: '#' }}"
+                class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
+            </picture>
+          {{ label }}
+        </span>
+        {% else %}
         <span class="badge rounded-pill me-1"
           style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
             <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ tech_info.color | remove_first: '#' }}"
             class="align-middle me-0" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
           {{ label }}
         </span>
+        {% endif %}
         {% else %}
         <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill me-1">{{ label }}</span>
         {% endif %}

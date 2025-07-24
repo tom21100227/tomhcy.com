@@ -1,0 +1,49 @@
+/* Contrast utility classes */
+.badge-high-contrast {
+  /* Ensure minimum contrast ratio of 4.5:1 for normal text */
+  background-color: var(--badge-bg, transparent) !important;
+  border: 1px solid var(--badge-color) !important;
+  color: var(--badge-color) !important;
+}
+
+/* Badge icons use Simple Icons API with direct color parameters via picture elements */
+.badge-icon {
+  /* No filters needed - colors are handled by Simple Icons API */
+  display: inline-block;
+  vertical-align: baseline;
+  height: 1em !important;
+  width: 1em !important;
+  transform: translate(0, calc(-0.125em * 0.5)) !important; /* Adjust for baseline alignment */
+}
+
+/* Ensure picture elements maintain consistent height and alignment */
+.badge-high-contrast picture {
+  display: inline-block;
+  height: 1em !important;
+  width: 1em !important;
+  vertical-align: baseline;
+  transform: translate(0, calc(-0.125em * 0.5)) !important; /* Adjust for baseline alignment */
+}
+
+/* Ensure source elements don't affect layout */
+.badge-high-contrast picture source {
+  display: contents;
+}
+
+/* Light theme uses the adjusted color from Jekyll */
+@media (prefers-color-scheme: light) {
+  .badge-high-contrast {
+    /* Use the Jekyll-adjusted color for light backgrounds */
+    border-color: var(--badge-color) !important;
+    color: var(--badge-color) !important;
+  }
+}
+
+/* Dark theme uses dark-adjusted colors */
+@media (prefers-color-scheme: dark) {
+  .badge-high-contrast {
+    /* Use dark-adjusted color if available, otherwise original color */
+    border-color: var(--badge-dark-color, var(--badge-original-color)) !important;
+    color: var(--badge-dark-color, var(--badge-original-color)) !important;
+  }
+}
