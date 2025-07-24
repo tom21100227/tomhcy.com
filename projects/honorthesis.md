@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/honorthesis/cover-min.png
+image: img/honorthesis/cover-min.webp
 title: "Honor Thesis"
 startDate: 2022
 date: 2025
@@ -20,7 +20,12 @@ summary: "My undergraduate honors thesis, applies deep learning analysis methods
 
 # Exploring Auditory Compensatory Neuroplasticity and Negative Phonotactic Behavior in <i>G. bimaculatus</i> through Computer Vision and Machine Learning-Driven Analysis
 
-<img src="/img/honorthesis/FinalPoster.png" alt="Honors Thesis Poster" class="img-fluid w-100">
+<picture>
+  <!-- WebP for modern browsers (smaller file size) -->
+  <source srcset="/img/honorthesis/cover-min.webp" type="image/webp">
+  <!-- PNG fallback for older browsers -->
+  <img src="/img/honorthesis/cover-min.png" alt="Honors Thesis Poster" class="img-fluid w-100">
+</picture>
 
 Cricket have their ears located on their tibiae, which is similar to our human ears being located on our elbow. During their lifetime, they lose their ears from mating fights and predation. Previous work in the lab has shown that crickets can adapt to this loss of hearing by regrowing their auditory neurons and connect to the contralateral ear. This process is called compensatory neuroplasticity.
 
