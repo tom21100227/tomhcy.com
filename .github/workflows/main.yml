@@ -70,7 +70,7 @@ jobs:
               echo "Original file content preview:"
               head -3 "$file"
               # Use very conservative minification to avoid breaking URLs
-              terser "$file" --compress sequences=false,conditionals=false,comparisons=false,evaluate=false,booleans=false,loops=false,unused=false,hoist_funs=false,keep_fargs=true,hoist_vars=false,if_return=false,join_vars=false,cascade=false,collapse_vars=false,reduce_vars=false,warnings=false,negate_iife=false,pure_getters=false,pure_funcs=null,drop_console=false,drop_debugger=false,keep_fnames=true --mangle false --keep-fnames --verbose --output "$file"
+              terser "$file" --compress --no-mangle --keep-fnames --verbose --output "$file"
               echo "Minified file content preview:"
               head -3 "$file"
               echo "---"

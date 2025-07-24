@@ -50,8 +50,8 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
     next unless File.exist?(full_css_path)
     
     css_content = File.read(full_css_path)
-    # Minify CSS (basic)
-    css_content = minify_css(css_content)
+    # Skip minification - already handled by pre-build CSSO step
+    # css_content = minify_css(css_content)
     
     # Replace the link tag with inline style
     link_pattern = /<link[^>]*href=["\']#{Regexp.escape(base_url)}\/#{Regexp.escape(css_path)}["\'][^>]*>/
@@ -67,8 +67,8 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
     next unless File.exist?(full_js_path)
     
     js_content = File.read(full_js_path)
-    # Minify JS (basic)
-    js_content = minify_js(js_content)
+    # Skip minification - already handled by pre-build Terser step
+    # js_content = minify_js(js_content)
     
     # Replace the script tag with inline script
     script_pattern = /<script[^>]*src=["\']#{Regexp.escape(base_url)}\/#{Regexp.escape(js_path)}["\'][^>]*><\/script>/
@@ -85,29 +85,4 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
   if new_size != original_size
     puts "  📄 #{File.basename(html_file)}: #{original_size} → #{new_size} bytes"
   end
-end
-
-def minify_css(css)
-  css
-    .gsub(/\/\*.*?\*\//m, '')  # Remove comments
-    .gsub(/\s+/, ' ')          # Collapse whitespace
-    .gsub(/;\s*}/, '}')        # Remove last semicolon in blocks
-    .gsub(/\s*{\s*/, '{')      # Clean up braces
-    .gsub(/\s*}\s*/, '}')
-    .gsub(/\s*;\s*/, ';')      # Clean up semicolons
-    .gsub(/\s*,\s*/, ',')      # Clean up commas
-    .gsub(/\s*:\s*/, ':')      # Clean up colons
-    .strip
-end
-
-def minify_js(js)
-  js
-    .gsub(/\/\*.*?\*\//m, '')     # Remove /* */ comments
-    .gsub(/\/\/.*$/, '')          # Remove // comments  
-    .gsub(/\s+/, ' ')             # Collapse whitespace
-    .gsub(/\s*;\s*/, ';')         # Clean up semicolons
-    .gsub(/\s*{\s*/, '{')         # Clean up braces
-    .gsub(/\s*}\s*/, '}')
-    .gsub(/\s*,\s*/, ',')         # Clean up commas
-    .strip
 end
