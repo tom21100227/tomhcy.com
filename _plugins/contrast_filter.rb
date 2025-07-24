@@ -1,5 +1,9 @@
 module Jekyll
   module ContrastFilter
+
+    STANDARD_CONTRAST_RATIO = 4.5
+    HIGH_CONTRAST_RATIO = 7.0
+    
     # Calculate relative luminance of a color
     def relative_luminance(color)
       # Remove # if present
@@ -60,12 +64,12 @@ module Jekyll
 
     # Standard contrast for regular users (more brand-friendly)
     def ensure_contrast_standard(color, background = "#FFFFFF")
-      ensure_contrast(color, background, 2.5)  # Lower threshold for better brand preservation
+      ensure_contrast(color, background, STANDARD_CONTRAST_RATIO)  # Lower threshold for better brand preservation
     end
 
     # High contrast for accessibility users (AAA compliance)
     def ensure_contrast_high(color, background = "#FFFFFF")
-      ensure_contrast(color, background, 7.0)  # AAA standard (7:1 for normal text)
+      ensure_contrast(color, background, HIGH_CONTRAST_RATIO)  # AAA standard (7:1 for normal text)
     end
     
     # Check if a color needs contrast adjustment
@@ -75,12 +79,12 @@ module Jekyll
 
     # Standard contrast check (more permissive)
     def needs_contrast_adjustment_standard(color, background = "#FFFFFF")
-      needs_contrast_adjustment(color, background, 2.5)
+      needs_contrast_adjustment(color, background, STANDARD_CONTRAST_RATIO)
     end
 
     # High contrast check (strict AAA)
     def needs_contrast_adjustment_high(color, background = "#FFFFFF")
-      needs_contrast_adjustment(color, background, 7.0)
+      needs_contrast_adjustment(color, background, HIGH_CONTRAST_RATIO)
     end
     
     # Check if a color is too dark for dark backgrounds (needs lightening)
@@ -90,12 +94,12 @@ module Jekyll
 
     # Standard dark contrast check (more permissive)
     def needs_contrast_adjustment_dark_standard(color, background = "#000000")
-      needs_contrast_adjustment_dark(color, background, 2.5)
+      needs_contrast_adjustment_dark(color, background, STANDARD_CONTRAST_RATIO)
     end
 
     # High dark contrast check (strict AAA)
     def needs_contrast_adjustment_dark_high(color, background = "#000000")
-      needs_contrast_adjustment_dark(color, background, 7.0)
+      needs_contrast_adjustment_dark(color, background, HIGH_CONTRAST_RATIO)
     end
     
     # Adjust color for dark backgrounds by lightening it
@@ -137,12 +141,12 @@ module Jekyll
 
     # Standard dark contrast for regular users (more brand-friendly)
     def ensure_contrast_dark_standard(color, background = "#000000")
-      ensure_contrast_dark(color, background, 2.5)
+      ensure_contrast_dark(color, background, STANDARD_CONTRAST_RATIO)
     end
 
     # High dark contrast for accessibility users (AAA compliance)
     def ensure_contrast_dark_high(color, background = "#000000")
-      ensure_contrast_dark(color, background, 7.0)
+      ensure_contrast_dark(color, background, HIGH_CONTRAST_RATIO)
     end
     
     # Expose contrast_ratio as a filter for testing
