@@ -63,11 +63,11 @@ jobs:
             fi
           done
           
-          # Minify JS files before Jekyll processes them
+          # Minify JS files before Jekyll processes them (with safer options)
           find js -name "*.js" -not -path "*node_modules*" | while read file; do
             if [ -f "$file" ]; then
               echo "Minifying JS: $file"
-              terser "$file" --compress --mangle --output "$file"
+              terser "$file" --compress drop_console=false,drop_debugger=false --mangle reserved=['API_URL','musicDataPromise'] --keep-fnames --output "$file"
             fi
           done
           
