@@ -1,7 +1,9 @@
 // Start the API request immediately, even before DOM is ready
-var musicDataPromise = fetch('https://music-api.tomhcy.workers.dev/')
-  .then(function (res) { return res.json(); })
-  .catch(function () { return { success: false, error: 'Network error' }; });
+// Protect API URL from minification
+var API_URL = 'https://your-api-endpoint.com/music-status';
+var musicDataPromise = fetch(API_URL)
+  .then(function(res) { return res.json(); })
+  .catch(function() { return { success: false, error: 'Network error' }; });
 
 // Update the DOM once it's ready
 document.addEventListener('DOMContentLoaded', function () {
