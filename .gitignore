@@ -5,3 +5,10 @@ _site/
 .jekyll-metadata
 # Gemfile.lock
 .idea
+
+# Node.js / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
