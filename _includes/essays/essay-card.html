@@ -22,8 +22,8 @@
         {% if tech_info and tech_info != empty %}
         <span class="badge rounded-pill me-1"
           style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
-          <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ tech_info.color | remove_first: '#' }}"
-            class="align-middle me-0" style="height: 1em; width: 1em;" />
+            <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ tech_info.color | remove_first: '#' }}"
+            class="align-middle me-0" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
           {{ label }}
         </span>
         {% else %}
