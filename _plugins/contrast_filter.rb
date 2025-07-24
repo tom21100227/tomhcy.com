@@ -3,7 +3,7 @@ module Jekyll
 
     STANDARD_CONTRAST_RATIO = 4.5
     HIGH_CONTRAST_RATIO = 7.0
-    
+
     # Calculate relative luminance of a color
     def relative_luminance(color)
       # Remove # if present
