@@ -41,6 +41,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 end
 
 def process_html_file(html_file, site_dir, base_url, css_files, js_files)
+  puts "  📑: #{html_file}"
   content = File.read(html_file)
   original_size = content.bytesize
   
@@ -57,7 +58,7 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
     link_pattern = /<link[^>]*href=["\']#{Regexp.escape(base_url)}\/#{Regexp.escape(css_path)}["\'][^>]*>/
     if content.match(link_pattern)
       content.gsub!(link_pattern, "<style>#{css_content}</style>")
-      puts "  ✓ Inlined: #{css_path} (#{css_content.bytesize} bytes)"
+      puts "  \t✓ Inlined: #{css_path} (#{css_content.bytesize} bytes)"
     end
   end
   
@@ -74,7 +75,7 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
     script_pattern = /<script[^>]*src=["\']#{Regexp.escape(base_url)}\/#{Regexp.escape(js_path)}["\'][^>]*><\/script>/
     if content.match(script_pattern)
       content.gsub!(script_pattern, "<script>#{js_content}</script>")
-      puts "  ✓ Inlined: #{js_path} (#{js_content.bytesize} bytes)"
+      puts "  \t✓ Inlined: #{js_path} (#{js_content.bytesize} bytes)"
     end
   end
   
@@ -83,6 +84,6 @@ def process_html_file(html_file, site_dir, base_url, css_files, js_files)
   new_size = content.bytesize
   
   if new_size != original_size
-    puts "  📄 #{File.basename(html_file)}: #{original_size} → #{new_size} bytes"
+    puts "  📄 #{original_size} → #{new_size} bytes"
   end
 end
