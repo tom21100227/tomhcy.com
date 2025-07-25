@@ -9,7 +9,11 @@ Based on [TechFolios](https://techfolios.github.io).
 <img width="449" height="105" alt="Lighthouse Result" src="https://github.com/user-attachments/assets/25ec67b6-af36-4310-b22f-68636711d68f"/>
 </p>
 
-100 is lighthouse's limit, not this website's limit. 
+> *"100 is lighthouse's limit, not this website's limit."*
+> 
+> *"So accessible, so performant, makes me want to consider my career as a front end dev"*
+> 
+> —— Tom Han 2025
 
 
 Changes made from the original TechFolios template include:
