@@ -5,7 +5,15 @@ Based on [TechFolios](https://techfolios.github.io).
 [<img width="1300" height="902" alt="demo" src="https://github.com/user-attachments/assets/0a8b22fa-6cd8-4217-9ef6-386aaa29e88f" />](https://tomhcy.com)
 
 
+<p align="center">
+<img width="449" height="105" alt="Lighthouse Result" src="https://github.com/user-attachments/assets/25ec67b6-af36-4310-b22f-68636711d68f"/>
+</p>
+
+100 is lighthouse's limit, not this website's limit. 
+
+
 Changes made from the original TechFolios template include:
+
 
 - **Features**
     - [Animation effects for icons around profile picture](https://tomhcy.com/essays/for-this-site.html#profile-picture-animation)
