@@ -26,6 +26,12 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
     
 </div>
 
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://gobbler-game-formally.ngrok-free.app" target="_blank" class="btn btn-primary">
+        embedded frame not working? click here.
+    </a>
+</div>
+
 <script>
     // The static URL for your Streamlit app from ngrok
     const streamlitUrl = "https://gobbler-game-formally.ngrok-free.app";
