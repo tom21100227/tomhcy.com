@@ -3,5 +3,10 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-# Gemfile.lock
+Gemfile.lock
 .idea
+
+# WSL fix
+
+.bundle/
+vendor/
