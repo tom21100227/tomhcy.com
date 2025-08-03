@@ -1,0 +1,23 @@
+# Development configuration override
+# This file extends _config.yml for local development
+
+# Disable asset inlining in development for faster rebuilds
+environment: development
+
+# Enable incremental regeneration for faster development
+incremental: true
+
+# Show drafts in development
+show_drafts: true
+
+# Disable optimization plugins in development
+plugins_dir: []
+
+# Local development server settings
+host: 127.0.0.1
+port: 4000
+livereload: true
+livereload_port: 35729
+
+# Disable asset optimization
+optimize_assets: false

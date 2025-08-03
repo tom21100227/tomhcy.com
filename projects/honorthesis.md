@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/honorthesis/FinalPoster_compressed.png
+image: img/honorthesis/cover-min.webp
 title: "Honor Thesis"
 startDate: 2022
 date: 2025

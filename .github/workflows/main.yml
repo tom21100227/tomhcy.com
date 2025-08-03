@@ -44,6 +44,40 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install optimization tools
+        run: |
+          npm install -g csso-cli terser
+      - name: Pre-build Asset Optimization
+        run: |
+          echo "🚀 Starting pre-build asset optimization..."
+          
+          # Minify CSS files before Jekyll processes them
+          find css -name "*.css" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ]; then
+              echo "Minifying CSS: $file"
+              csso "$file" --output "$file"
+            fi
+          done
+          
+          # Minify JS files before Jekyll processes them (with very safe options and verbose logging)
+          find js -name "*.js" -not -path "*node_modules*" | while read file; do
+            if [ -f "$file" ]; then
+              echo "Minifying JS: $file"
+              echo "Original file content preview:"
+              head -3 "$file"
+              # Use very conservative minification to avoid breaking URLs
+              terser "$file" --compress --no-mangle --keep-fnames --verbose --output "$file"
+              echo "Minified file content preview:"
+              head -3 "$file"
+              echo "---"
+            fi
+          done
+          
+          echo "✅ Pre-build asset optimization completed!"
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

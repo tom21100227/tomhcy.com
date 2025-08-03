@@ -1,6 +1,8 @@
 # REQUIRED CHANGES
 # Edit next line to provide your own name.
 title: Tom Han Chongye
+# Edit next line to provide your site description for SEO
+description: "Research Assistant at Salk Institute passionate about using AI and data science to unravel the mysteries of complex biological questions."
 # Edit next line, replacing 'techfolios' with your github username
 url: "https://tom21100227.github.io"
 # Edit next line so that baseurl is "" if your repo is <username>.github.io
@@ -19,7 +21,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 strict_front_matter: true
-mathjax: true
+mathjax: false
 exclude:
   - Gemfile
   - Gemfile.lock
