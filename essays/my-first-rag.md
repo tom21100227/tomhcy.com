@@ -3,7 +3,7 @@ layout: essay
 type: essay
 title: "My first RAG ChatBot"
 date: 2025-07-21
-last_updated: 
+last_updated: 2025-08-03
 published: true
 labels:
   - LangChain
@@ -36,5 +36,29 @@ If you consider outputting text as the sole goal, I finished the project here al
 - To make this an actually useful chatbot, I need to improve the RAG part, either step back, multiquery, or HyDE. 
 - Actual conversation memory. I want the chatbot to remember previous interactions and context.
 - An MCP!
+
+## 08.2025 Update
+
+After a long fight with Claude 4, I got it working as a functional web chatbot with RAG fusion and conversation memory. It is alive on [this site](https://tomhcy.com/projects/rag-sleap-docs). It is still not perfect, but it is a good start. I will continue to improve it and add more features.
+
+### RAG
+
+I finally got familar with the LangChain logic of making everything a part of the chain. Each RAG methods now have their own chain, and I configured it such that LangSmith can track the inputs and outputs of each step. 
+
+![LangSmith traces are more readable that ever thanks to improved tracing](img/my-first-rag/0825-langsmith.png)
+
+### Conversation Memory
+
+Everything eveutally becomes a restful API. I was trying very very hard to not write any API endpoint because I am tired of it. But with this streamlit app, I realized what I essentially did was still RESTful, just wrapped in a streamlit app. But hey, at least this website does not get overwhelms when multiple people are using it at the same time! 
+
+### Streatlit App
+
+This webapp is now hosted on my own PC. With streatlit and ngrok, I was able to forward it to the public internet. Still trying to make it more stable, but at lesat it is working now. I do really want to make it serverless, but with a locally based vector database, any serverless solution including strealit cloud, vercel, and cloudflare workers are not suitable for this project. 
+
+But for my original purpose of making a chatbot that helps **me** with SLEAP, it is working well enough. Let's see if I have more time and interest to improve it in the future. 
+
+### Output quality
+
+Currently this model is not very good at answering, with the prompt being overly cautious and refuse to answer when it does not know the answer. I am not sure if it's an issue with the quality of the retrived documents, or the model itself. Switching from `gemini-2.0-flash-lite` to `gemini-2.5-flash-lite` did help with the quality of the output, but it is still not perfect. I am thinking about trying this bot on some other repositories to see if it is a problem with input dataset or the model itself.
 
 Stay tuned, I will update this essay as I make progress on this project.
