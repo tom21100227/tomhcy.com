@@ -99,6 +99,8 @@ GEM
       webrick (~> 1.7)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
+    jekyll-redirect-from (0.16.0)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
@@ -206,6 +208,7 @@ DEPENDENCIES
   html-proofer
   jekyll (~> 4.3.3)
   jekyll-gist
+  jekyll-redirect-from
   rouge
   tzinfo (~> 1.2)
   tzinfo-data

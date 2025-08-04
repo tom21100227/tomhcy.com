@@ -5,6 +5,8 @@ image: img/placeholder.png
 title: "RAG ChatBot"
 date: 2025
 published: true
+redirect_from:
+  - /rag/
 labels:
   - LangChain
   - Python
@@ -14,12 +16,11 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
 # projecturl: "https://github.com/tom21100227/now-playing-api"
 ---
 
-<div style="text-align: center; margin-top: 20px;">
+<div style="text-align: center; margin-top: 20px; margin-bottom: 24px;">
     <a href="https://gobbler-game-formally.ngrok-free.app" target="_blank" class="btn btn-primary">
         embedded frame not working? click here.
     </a>
 </div>
-
 
 <div id="streamlit-container" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
     <div id="app-loader" style="width: 100%; height: 600px;"></div>
@@ -28,8 +29,9 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
         <h3>🚧 App Not Available</h3>
         <p>This app is currently offline. Please check back later!</p>
     </div>
-    
 </div>
+
+To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
 
 <script>
     // The static URL for your Streamlit app from ngrok
