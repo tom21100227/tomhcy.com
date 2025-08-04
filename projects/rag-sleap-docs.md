@@ -64,7 +64,7 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
             <iframe
                 src="${streamlitUrl}"
                 width="100%"
-                height="80vh"
+                height="100%"
                 style="border:none;">
             </iframe>
         `;
