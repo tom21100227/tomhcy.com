@@ -23,7 +23,7 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
 </div>
 
 <div id="streamlit-container" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-    <div id="app-loader" style="width: 100%; height: 600px;"></div>
+    <div id="app-loader" style="width: 100%; height: 80vh;"></div>
 
     <div id="app-offline" style="display: none; text-align: center; padding: 50px; font-family: sans-serif; color: #555;">
         <h3>🚧 App Not Available</h3>
@@ -64,7 +64,7 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
             <iframe
                 src="${streamlitUrl}"
                 width="100%"
-                height="600px"
+                height="80vh"
                 style="border:none;">
             </iframe>
         `;
