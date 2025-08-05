@@ -45,7 +45,13 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
         try {
             // We use 'no-cors' mode because we only need to know if the server responds,
             // not to read its content, which avoids CORS issues.
-            const response = await fetch(streamlitUrl, { mode: 'no-cors' });
+            // Add ngrok header to skip browser warning
+            const response = await fetch(streamlitUrl, { 
+                mode: 'no-cors',
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                }
+            });
             
             // If the fetch promise resolves, the server is up.
             showIframe();
@@ -60,9 +66,11 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
 
     // Function to display the iframe
     function showIframe() {
+        // Add ngrok-skip-browser-warning as URL parameter
+        const iframeUrl = `${streamlitUrl}?ngrok-skip-browser-warning=true`;
         loader.innerHTML = `
             <iframe
-                src="${streamlitUrl}"
+                src="${iframeUrl}"
                 width="100%"
                 height="100%"
                 style="border:none;">
