@@ -53,13 +53,6 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
                 return;
             }
             
-            // If the response isn't okay, also show the offline message.
-            if (!response.ok) {
-                console.error("Server error: Status", response.status);
-                showOfflineMessage();
-                return;
-            }
-            
             // If the fetch promise resolves successfully, the server is up.
             showIframe();
         } catch (error) {
