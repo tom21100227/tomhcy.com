@@ -17,8 +17,8 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
 ---
 
 <div style="text-align: center; margin-top: 20px; margin-bottom: 24px;">
-    <a href="https://gobbler-game-formally.ngrok-free.app" target="_blank" class="btn btn-primary">
-        embedded frame not working? click here.
+    <a href="https://rag-sleap-docs-demo.tomhcy.com/" target="_blank" class="btn btn-primary">
+        constant redirect/embedded frame not working? click here.
     </a>
 </div>
 
@@ -35,7 +35,7 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
 
 <script>
     // The static URL for your Streamlit app from ngrok
-    const streamlitUrl = "https://gobbler-game-formally.ngrok-free.app";
+    const streamlitUrl = "https://rag-sleap-docs-demo.tomhcy.com/";
 
     const loader = document.getElementById("app-loader");
     const offlineMessage = document.getElementById("app-offline");
