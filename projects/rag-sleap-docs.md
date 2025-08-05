@@ -34,7 +34,6 @@ summary: "A serverless API that fetches my currently playing song from Spotify a
 To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
 
 <script>
-    // The static URL for your Streamlit app from ngrok
     const streamlitUrl = "https://rag-sleap-docs-demo.tomhcy.com/";
 
     const loader = document.getElementById("app-loader");
@@ -43,22 +42,28 @@ To learn more about this, checkout [REDACTED](tomhcy.com/404.html)
     // Function to check if the URL is reachable
     async function checkAppStatus() {
         try {
-            // We use 'no-cors' mode because we only need to know if the server responds,
-            // not to read its content, which avoids CORS issues.
-            // Add ngrok header to skip browser warning
-            const response = await fetch(streamlitUrl, { 
-                mode: 'no-cors',
-                headers: {
-                    'ngrok-skip-browser-warning': 'true'
-                }
-            });
+            const response = await fetch(streamlitUrl, { mode: 'no-cors' });
             
-            // If the fetch promise resolves, the server is up.
+            // Those does not work because CORS policy. But keeping it for reference.
+            
+            // If the server responded with a 502 Bad Gateway, show the offline message.
+            if (response.status === 502) {
+                console.error("502 Bad Gateway: App is offline");
+                showOfflineMessage();
+                return;
+            }
+            
+            // If the response isn't okay, also show the offline message.
+            if (!response.ok) {
+                console.error("Server error: Status", response.status);
+                showOfflineMessage();
+                return;
+            }
+            
+            // If the fetch promise resolves successfully, the server is up.
             showIframe();
-
         } catch (error) {
-            // A TypeError (like "Failed to fetch") indicates a network error,
-            // meaning the server is down.
+            // A TypeError (like "Failed to fetch") indicates a network error.
             console.error("App is offline:", error);
             showOfflineMessage();
         }
