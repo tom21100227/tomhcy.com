@@ -10,6 +10,8 @@ on:
       - '**/*.gif'
       - '**/*.webp'
       - '**/*.avif'
+  workflow_dispatch:
+  # I should be able to manually trigger this. 
 
 jobs:
   build:
