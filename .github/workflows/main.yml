@@ -12,6 +12,7 @@ on:
     branches: ["main"]
     paths-ignore:
       - 'README.md'
+      - '.github/*' # GitHub Action changes should not trigger new deploy. 
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
