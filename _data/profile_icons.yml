@@ -12,7 +12,7 @@
   delay: 0.05s
   opacity: 1
   url: 'https://www.salk.edu/'
-- src: '/img/album_cover_placeholder.svg'
+- src: '/img/good_music.webp'
   alt: 'Album Cover'
   scale: 1.5
   angle: 40deg
