@@ -219,3 +219,9 @@ langchain:
 ollama:
   color: "#000000"
   icon: "ollama"
+prefect:
+  color: "#070E10"
+  icon: "prefect"
+postgresql:
+  color: "#4169E1"
+  icon: "postgresql"
