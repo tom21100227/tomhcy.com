@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/now-playing-indicator/now-playing-api-dashboard_compressed.png
+image: img/good_music.webp
 title: "Now Playing API"
 date: 2025
 published: true
