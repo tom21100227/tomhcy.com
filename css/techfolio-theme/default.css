@@ -44,8 +44,63 @@ a {
   }
 }
 
+.music-status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.music-status-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.music-status-header .lead {
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .music-status-container:hover .music-status-info {
   display: block !important;
+}
+
+.music-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.music-refresh-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.music-refresh-button:focus-visible {
+  outline: 2px solid var(--bs-link-color);
+  outline-offset: 2px;
+}
+
+.music-refresh-button .refresh-icon {
+  pointer-events: none;
+}
+
+.music-refresh-button.is-loading .refresh-icon {
+  animation: spin 0.8s linear infinite;
+}
+
+.music-refresh-button:disabled {
+  pointer-events: none;
+  opacity: 0.75;
+  background: transparent;
 }
 
 /* Simplify the styling of the bottom of Essay cards. */
@@ -114,6 +169,15 @@ a {
 .pulsing-img {
   --pulse-color: rgba(30, 30, 30, 0.8);
   animation: pulse 3s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
@@ -207,6 +271,10 @@ a {
   .card-footer {
     /* Ensure footer inherits the card's background color */
     background-color: var(--bs-card-bg);
+  }
+
+  .music-refresh-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
   }
 }
 

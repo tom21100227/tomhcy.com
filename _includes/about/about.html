@@ -31,7 +31,19 @@
         </p>
         
         <div class="music-status-container mt-3">
-          <p class="lead mb-0" id="music-status"></p>
+          <div class="music-status-header">
+            <p class="lead mb-0 flex-grow-1" id="music-status"></p>
+            <button type="button"
+                    class="music-refresh-button"
+                    id="music-refresh-button"
+                    aria-label="Refresh now playing"
+                    title="Refresh now playing">
+              <svg aria-hidden="true" focusable="false" class="refresh-icon" width="1.2em" height="1.2em" fill="currentColor">
+                <use xlink:href="/img/bootstrap-icons.svg#arrow-clockwise"></use>
+              </svg>
+              <span class="visually-hidden">Refresh now playing</span>
+            </button>
+          </div>
           <p class="small text-start text-right music-status-info" style="display: none;"><a href="/projects/now-playing-indicator.html">What is this?</a></p>
         </div>
         <hr class="my-4">
