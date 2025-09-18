@@ -48,6 +48,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  position: relative;
+  padding-bottom: 1.25rem;
 }
 
 .music-status-header {
@@ -63,8 +65,24 @@ a {
   min-width: 0;
 }
 
-.music-status-container:hover .music-status-info {
-  display: block !important;
+.music-status-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(0.2rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.music-status-container:hover .music-status-info,
+.music-status-container:focus-within .music-status-info {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .music-refresh-button {
