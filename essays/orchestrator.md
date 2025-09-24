@@ -13,4 +13,9 @@ labels:
   - Orchestrators 
 ---
 
-I love not doing stuff by myself so I want an orchestrator: 
+I love not doing stuff by myself so I want an orchestrator. 
+
+[Reason why I picked Prefect]
+
+[Diagram]
+
