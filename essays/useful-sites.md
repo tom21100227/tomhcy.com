@@ -3,7 +3,7 @@ layout: essay
 type: essay
 title: "Things that I wish I known about earlier"
 date: 2025-07-25
-published: false
+published: true
 labels:
   - Tools
 ---
@@ -14,7 +14,7 @@ labels:
 
 [NN-SVG](https://alexlenail.me/NN-SVG/) 
 
-An automatic +10 pts if I see you including a diagram like this in when grading reports. Elegant, straightforward, and easy to use.
+An automatic +10 pts if I see you including a diagram like this in when grading student reports. Elegant, straightforward, and easy to use.
 
 ## `diagrams.net`
 
@@ -34,17 +34,23 @@ Made my terminal look so much better.
 
 ## BetterDisplay
 
-The brightness control with external displays is the one feature I need. Thinking about getting the Pro subscription for the extra features like turning it off. 
+The brightness control with external displays is the one feature I need. Thinking about getting the Pro subscription for the extra features like turning some of my display off. 
 
 ## iStat Menus
 
+Insanely useful for me. Keep me aware of whether my computer is doing things I want it to do or not. 
+
 ## Hidden Bar
+
+With iStat Menus my menubars gets bloated. However now that I am unfortunately on those MacBooks with a notch, I am considering switching to bartender for the popped out second bar. I wish there's a open source implementation for this...
 
 ## 1Password
 
+I am a self-proclaimed poweruser who frequenty get new devices and wipe old devices. In my work I also need to log on a lot of shared computers. Having 1Password to manage all my password and 2FA is a life saver. It is defineitly worth the price as long as I am still on my student subscrption pricing. 
+
 ## KeyCastr
 
-If you've ever worked IT or have to record a video tutorial on how do to certain things on your computer, you would love this. Also just generally useful for teaching and presentations remotely. 
+If you've ever worked IT or have to record a video tutorial on how do to certain things on your computer, you would love this. Also just generally useful for teaching and presentations remotely. I've seen a *cooler* version of this on some of the tech youtuber that I watch, but no one mentioned about what it is called yet so I guess I will stick with this for now. 
 
 ## Obsidian
 
