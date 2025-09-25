@@ -12,8 +12,15 @@
   - Support for both light and dark modes
 {%- endcomment -%}
 
-{%- assign stripped_label = include.label | strip | downcase -%}
-{%- assign tech_info = site.data.tech_themes[stripped_label] -%}
+{%- assign label_text = include.label | strip -%}
+{%- assign normalized_label = label_text | downcase -%}
+{%- assign tech_info = site.data.tech_themes[normalized_label] -%}
+{%- assign is_interactive = include.interactive -%}
+{%- if is_interactive == true or is_interactive == 'true' -%}
+  {%- assign is_interactive = true -%}
+{%- else -%}
+  {%- assign is_interactive = false -%}
+{%- endif -%}
 
 {%- if tech_info and tech_info != empty -%}
   {%- assign standard_color = tech_info.color | ensure_contrast_standard -%}
@@ -25,23 +32,59 @@
   {%- assign needs_standard_dark = tech_info.color | needs_contrast_adjustment_dark_standard -%}
   {%- assign needs_high_dark = tech_info.color | needs_contrast_adjustment_dark_high -%}
   
+  {%- capture badge_inner -%}
+    <picture class="align-middle me-0" style="height: 1em; width: 1em;">
+      <source media="(prefers-color-scheme: dark) and (prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color_dark | remove_first: '#' }}">
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}">
+      <source media="(prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color | remove_first: '#' }}">
+      <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
+    </picture>
+    {{ label_text }}
+  {%- endcapture -%}
+
   {%- if needs_standard or needs_high or needs_standard_dark or needs_high_dark -%}
-    <span class="badge rounded-pill me-1 badge-standard-contrast"
-      style="--badge-standard-color: {{ standard_color }}; --badge-high-color: {{ high_color }}; --badge-original-color: {{ tech_info.color }}; --badge-standard-dark-color: {{ standard_color_dark }}; --badge-high-dark-color: {{ high_color_dark }}; background-color: transparent; border: 1px solid {{ standard_color }}; color: {{ standard_color }};">
-        <picture class="align-middle me-0" style="height: 1em; width: 1em;">
-          <source media="(prefers-color-scheme: dark) and (prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color_dark | remove_first: '#' }}">
-          <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}">
-          <source media="(prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color | remove_first: '#' }}">
-          <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
-        </picture>
-      {{ include.label }}
-    </span>
+    {%- if is_interactive -%}
+      <button type="button"
+              class="badge rounded-pill me-1 badge-standard-contrast badge-button"
+              data-project-badge
+              data-label="{{ normalized_label | escape }}"
+              data-label-display="{{ label_text | escape }}"
+              style="--badge-standard-color: {{ standard_color }}; --badge-high-color: {{ high_color }}; --badge-original-color: {{ tech_info.color }}; --badge-standard-dark-color: {{ standard_color_dark }}; --badge-high-dark-color: {{ high_color_dark }}; background-color: transparent; border: 1px solid {{ standard_color }}; color: {{ standard_color }};">
+        {{ badge_inner | strip }}
+      </button>
+    {%- else -%}
+      <span class="badge rounded-pill me-1 badge-standard-contrast"
+        style="--badge-standard-color: {{ standard_color }}; --badge-high-color: {{ high_color }}; --badge-original-color: {{ tech_info.color }}; --badge-standard-dark-color: {{ standard_color_dark }}; --badge-high-dark-color: {{ high_color_dark }}; background-color: transparent; border: 1px solid {{ standard_color }}; color: {{ standard_color }};">
+        {{ badge_inner | strip }}
+      </span>
+    {%- endif -%}
   {%- else -%}
-    <span class="badge rounded-pill me-1" style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
-        <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ tech_info.color | remove_first: '#' }}" class="align-middle me-0" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" />
-      {{ include.label }}
-    </span>
+    {%- if is_interactive -%}
+      <button type="button"
+              class="badge rounded-pill me-1 badge-button"
+              data-project-badge
+              data-label="{{ normalized_label | escape }}"
+              data-label-display="{{ label_text | escape }}"
+              style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
+        {{ badge_inner | strip }}
+      </button>
+    {%- else -%}
+      <span class="badge rounded-pill me-1" style="background-color: transparent; border: 1px solid {{ tech_info.color }}; color: {{ tech_info.color }};">
+        {{ badge_inner | strip }}
+      </span>
+    {%- endif -%}
   {%- endif -%}
 {%- else -%}
-  <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill me-1">{{ include.label }}</span>
+  {%- if is_interactive -%}
+    <button type="button"
+            class="badge rounded-pill me-1 badge-button"
+            data-project-badge
+            data-label="{{ normalized_label | escape }}"
+            data-label-display="{{ label_text | escape }}"
+            style="background-color: var(--tf-pill-bg); border: none; color: inherit;">
+      {{ label_text }}
+    </button>
+  {%- else -%}
+    <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill me-1">{{ label_text }}</span>
+  {%- endif -%}
 {%- endif -%}

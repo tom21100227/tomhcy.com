@@ -1,3 +1,27 @@
+{%- assign card_labels = include.page.labels -%}
+{%- if card_labels -%}
+  {%- assign card_labels_json = card_labels | jsonify -%}
+  {%- assign card_labels_joined = "" -%}
+  {%- for card_label in card_labels -%}
+    {%- assign trimmed_card_label = card_label | strip -%}
+    {%- if trimmed_card_label != "" -%}
+      {%- if card_labels_joined == "" -%}
+        {%- assign card_labels_joined = trimmed_card_label -%}
+      {%- else -%}
+        {%- assign card_labels_joined = card_labels_joined | append: "||" | append: trimmed_card_label -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- assign card_labels_json = "[]" -%}
+  {%- assign card_labels_joined = "" -%}
+{%- endif -%}
+
+{%- assign badges_interactive = false -%}
+{%- if include.filters_enabled == true or include.filters_enabled == 'true' -%}
+  {%- assign badges_interactive = true -%}
+{%- endif -%}
+
 {%- if page.projecturl -%}
   {%- assign card_link = page.projecturl -%}
   {%- assign card_text = "Project Site" -%}
@@ -5,7 +29,12 @@
   {%- assign card_link = site.baseurl | append: include.page.url -%}
   {%- assign card_text = "Read More" -%}
 {%- endif -%}
-<div class="card mb-3 position-relative">
+<div class="card mb-3 position-relative"
+     data-project-card
+     data-project-title="{{ include.page.title | escape }}"
+     data-project-url="{{ card_link | escape }}"
+     data-labels="{{ card_labels_joined | escape }}"
+     data-labels-json='{{ card_labels_json | escape }}'>
   <div class="row g-0">
     <div class="col-md-4 col-lg-3 col-xxl-2 project-image-container{% if site.data.project_image_data[include.page.title] and site.data.project_image_data[include.page.title].is_wide %} wide{% endif %}">
       
@@ -26,7 +55,7 @@
         <p class="card-text">{{ include.page.summary }}</p>
         <p>
           {% for label in include.page.labels %}
-            {% include badge.html label=label %}
+            {% include badge.html label=label interactive=badges_interactive %}
           {% endfor %}
         </p>
       </div>
