@@ -157,6 +157,27 @@ a {
   opacity: 0.7;
 }
 
+.essay-content {
+  font-size: clamp(1.05rem, 1rem + 0.6vw, 1.3rem);
+  line-height: 1.8;
+}
+
+.essay-content p,
+.essay-content li {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.essay-content p {
+  margin-bottom: 1.25rem;
+}
+
+.essay-content h2,
+.essay-content h3,
+.essay-content h4 {
+  margin-top: 2rem;
+}
+
 /* Simplify the styling of the bottom of Essay cards. */
 .card-footer {
   background-color: var(--bs-white);
