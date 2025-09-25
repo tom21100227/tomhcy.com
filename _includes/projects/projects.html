@@ -6,24 +6,120 @@
       </div>
     </div>
 
+    {% assign project_pages = site.pages | where: "type", "project" | project_sort %}
+    {% assign delimiter = "||" %}
+    {% assign collected_labels = "" %}
+    {% assign not_draft = 0 %}
+    {% for page in project_pages %}
+      {% unless page.draft %}
+        {% assign not_draft = not_draft | plus: 1 %}
+        {% if page.labels %}
+          {% for raw_label in page.labels %}
+            {% assign label_trimmed = raw_label | strip %}
+            {% if label_trimmed != "" %}
+              {% assign collected_labels = collected_labels | append: label_trimmed | append: delimiter %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+
+    {% assign unique_labels = collected_labels | split: delimiter | uniq | sort %}
+    {% assign usable_labels = "" %}
+    {% for uniq_label in unique_labels %}
+      {% assign trimmed_unique = uniq_label | strip %}
+      {% if trimmed_unique != "" %}
+        {% if usable_labels == "" %}
+          {% assign usable_labels = trimmed_unique %}
+        {% else %}
+          {% assign usable_labels = usable_labels | append: delimiter | append: trimmed_unique %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign filters_enabled = false %}
+    {% if include.limit == nil and usable_labels != "" %}
+      {% assign filters_enabled = true %}
+      {% assign filter_labels = usable_labels | split: delimiter %}
+    {% endif %}
+
+    {% if filters_enabled %}
+      {% assign filter_whitelist = site.data.project_filter_whitelist %}
+      {% if filter_whitelist == nil %}
+        {% assign filter_whitelist = '' | split: '|' %}
+      {% endif %}
+      <div class="project-filter-toolbar" data-project-filter data-total-projects="{{ not_draft }}">
+        <div class="project-filter-buttons" data-filter-group>
+          {% for filter_label in filter_labels %}
+            {% assign normalized_label = filter_label | strip | downcase %}
+            {% assign label_count = 0 %}
+            {% for page in project_pages %}
+              {% unless page.draft %}
+                {% if page.labels and page.labels contains filter_label %}
+                  {% assign label_count = label_count | plus: 1 %}
+                {% endif %}
+              {% endunless %}
+            {% endfor %}
+            {% assign allow_single = false %}
+            {% if filter_whitelist contains normalized_label %}
+              {% assign allow_single = true %}
+            {% endif %}
+            {% if label_count > 1 or allow_single %}
+              {% assign tech_info = site.data.tech_themes[normalized_label] %}
+              {% assign button_classes = "project-filter-button" %}
+              {% assign button_style = "" %}
+              {% capture icon_markup %}{% endcapture %}
+              {% if tech_info and tech_info != empty %}
+                {% assign standard_color = tech_info.color | ensure_contrast_standard %}
+                {% assign high_color = tech_info.color | ensure_contrast_high %}
+                {% assign standard_color_dark = tech_info.color | ensure_contrast_dark_standard %}
+                {% assign high_color_dark = tech_info.color | ensure_contrast_dark_high %}
+                {% capture icon_markup %}
+                  <picture class="project-filter-icon">
+                    <source media="(prefers-color-scheme: dark) and (prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color_dark | remove_first: '#' }}">
+                    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}">
+                    <source media="(prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color | remove_first: '#' }}">
+                    <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" alt="" aria-hidden="true">
+                  </picture>
+                {% endcapture %}
+                {% capture button_style %}
+--filter-border-color: {{ standard_color }};--filter-color: {{ standard_color }};--filter-hover-color: {{ high_color }};--filter-active-color: {{ standard_color }};--filter-text-color: #fff;
+                {% endcapture %}
+                {% assign button_style = button_style | strip | strip_newlines %}
+                {% assign button_classes = button_classes | append: " project-filter-button--has-color" %}
+              {% endif %}
+              <button type="button"
+                      class="{{ button_classes }}"
+                      data-filter-button
+                      data-label="{{ normalized_label | escape }}"
+                      data-label-display="{{ filter_label | escape }}"
+                      data-count="{{ label_count }}"
+                      aria-pressed="false"
+                      aria-label="{{ filter_label | escape }} ({{ label_count }} project{% if label_count != 1 %}s{% endif %})"
+                      {% unless button_style == "" %}style="{{ button_style }}"{% endunless %}>
+                {{ icon_markup | strip }}
+                <span class="project-filter-label">{{ filter_label }}</span>
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="project-filter-actions">
+          <button type="button" class="project-filter-clear" data-filter-clear hidden>Clear filters</button>
+          <p class="project-filter-status small text-muted" aria-live="polite" data-filter-status></p>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="vstack gap-3">
-      {% assign project_pages = site.pages | where: "type", "project" | project_sort %}
       {% for page in project_pages %}
         {% unless page.draft %}
-          {% include projects/project-card.html page=page %}
+          {% include projects/project-card.html page=page filters_enabled=filters_enabled %}
         {% endunless %}
         {% if forloop.index == include.limit %}
           {% break %}
         {% endif %}
       {% endfor %}
     </div>
-
-    {% assign not_draft = 0 %}
-      {% for page in project_pages %}
-      {% unless page.draft %}
-        {% assign not_draft = not_draft | plus: 1 %}
-      {% endunless %}
-    {% endfor %}
 
     {% if not_draft > include.limit %}
       <p class="text-center pt-4"><a href="{{ site.baseurl}}/projects/">See all {{ not_draft }} projects</a></p>

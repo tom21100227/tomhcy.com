@@ -20,3 +20,9 @@ Recent history favors short, imperative subjects (`Remove unused action`, `Updat
 
 ## Deployment & Optimization
 Deployments run from `.github/workflows/main.yml`, installing Ruby 3.4 and Node 18 before minifying with `csso` and `terser` for GitHub Pages. Avoid committing pre-minified files; let the workflow handle optimization. If asset paths change, update the workflow scan paths and flag the tweak in your PR.
+
+## Agent Notes
+- Project filters now build from `_includes/projects/projects.html`: project cards expose `data-labels` (pipe-delimited + JSON fallback) and badges pass `interactive=true` when filters are enabled. Keep both attributes in sync when editing cards.
+- Filtering UI pulls tech colors through the existing contrast helpers; `css/contrast-utils.css` is loaded globally, so any new badge styles should keep the `badge-standard-contrast` variables intact.
+- Buttons only render for labels with more than one project unless whitelisted via `_data/project_filter_whitelist.yml` (currently TypeScript, Cloudflare Workers, Swift). Update the list to surface single-project filters.
+- `js/project-cards.js` relies on being loaded on every page; avoid moving that script tag back inside the home-page guard. Filter logic defaults to AND matching across active labels.
