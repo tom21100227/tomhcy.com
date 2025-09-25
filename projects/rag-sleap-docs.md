@@ -4,7 +4,7 @@ type: project
 image: img/placeholder.png
 title: "RAG ChatBot"
 date: 2025
-published: true
+published: false
 redirect_from:
   - /rag/
 labels:
@@ -12,7 +12,7 @@ labels:
   - Python
   - Retrieval Augmented Generation
   - Google Cloud Platform
-summary: "A serverless API that fetches my currently playing song from Spotify and Apple Music, deployed with Cloudflare Workers."
+summary: "Small RAG chatbot made to understand sleap."
 # projecturl: "https://github.com/tom21100227/now-playing-api"
 ---
 
