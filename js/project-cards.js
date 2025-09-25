@@ -149,6 +149,7 @@
       });
 
       updateControls(matchedCount);
+      return matchedCount;
     }
 
     function toggleFilter(label) {
@@ -157,10 +158,17 @@
       }
       if (isActive(label)) {
         removeFilter(label);
-      } else {
-        addFilter(label);
+        filterCards();
+        return;
       }
-      filterCards();
+
+      addFilter(label);
+      var matches = filterCards();
+      if (matches === 0) {
+        clearFilters();
+        addFilter(label);
+        filterCards();
+      }
     }
 
     function setSingleFilter(label) {
