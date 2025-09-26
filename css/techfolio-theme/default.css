@@ -16,6 +16,34 @@
   --tf-card-hover-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+html {
+  min-height: 100%;
+  background-color: var(--tf-page-bg-color);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tf-page-bg-color);
+}
+
+body > header,
+body > footer {
+  flex-shrink: 0;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tf-page-bg-color);
+}
+
+.site-main > .bg-gradient:only-child {
+  flex: 1 0 auto;
+}
+
 /* Format social media icons */
 .tf-social {
   display: inline-block;
@@ -394,6 +422,10 @@ a {
     
     /* Pill (Hashtags) Background */
     --tf-pill-bg: var(--bs-gray-900);
+  }
+
+  html {
+    background-color: var(--bs-body-bg);
   }
 
   body {
