@@ -25,6 +25,8 @@ Changes made from the original TechFolios template include:
     - Added a "Now Playing" Indicator with [Now Playing API](https://github.com/tom21100227/now-playing-api)
     - Clicking my name would cycle through different versions of my name.
     - [Added now page.](https://tomhcy.com/now/)
+    - [Added mermaid support for essays.](https://tomhcy.com/essays/getting-starts-with-orchestrator-with-prefect.html)
+    - Projects can be filtered by labels (programming languages/technologies).
 - **Aesthetics**
     - Layout changes to the home page (bio section under the profile picture)
     - [Added "Last Updated" field to writings/essays that receives updates.](https://tomhcy.com/essays/for-this-site.html#last-updated-for-writings)
@@ -43,8 +45,7 @@ Changes made from the original TechFolios template include:
 
 TODO:
 
-- Visitor counter (distinct visitors and page views I guess)
-- Add a filter for projects to filter by (programming) language.
+- Visitor counter (distinct visitors and page views I guess).
 - Add a Chinese (Simplified) Version, and the corresponding language toggle.
 - Toggle for Dark mode (not necessary)
 - AI Summary For Projects (cuz everyone loves that)
