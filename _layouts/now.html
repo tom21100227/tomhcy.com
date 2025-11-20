@@ -4,5 +4,11 @@ layout: home
 
 <div class="container py-4">
   <h1 class="display-4">{{ page.title }}</h1>
- {{ content }}
+  {{ content }}
+
+  {%- if page.git_modified_date -%}
+  <p class="text-muted fst-italic mt-4">
+    <small>Last updated {{ page.git_modified_date }}</small>
+  </p>
+  {%- endif -%}
 </div>

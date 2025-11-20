@@ -33,6 +33,4 @@ Fluent Python by Luciano Ramalho. I want to learn more about how to write python
 
 ## Thinking about
 
-Can you actually make a profit from online betting platforms like Kalshi? 
-
-*Updated September 22nd, 2025*
+Can you actually make a profit from online betting platforms like Kalshi?

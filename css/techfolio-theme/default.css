@@ -19,6 +19,7 @@
 html {
   min-height: 100%;
   background-color: var(--tf-page-bg-color);
+  scrollbar-width: none;
 }
 
 body {
@@ -26,6 +27,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--tf-page-bg-color);
+  margin: 0;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body > header,
@@ -34,14 +41,14 @@ body > footer {
 }
 
 .site-main {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   background-color: var(--tf-page-bg-color);
 }
 
 .site-main > .bg-gradient:only-child {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 /* Format social media icons */
