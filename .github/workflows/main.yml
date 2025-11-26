@@ -36,6 +36,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed for git_modified_date plugin
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
