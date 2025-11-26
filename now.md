@@ -4,33 +4,37 @@ title: Now Page
 permalink: /now/
 ---
 
-This page is a [now page](https://nownownow.com/about), and it's what I'm focused on at this point in my life.
+This page is a [now page](https://nownownow.com/about), you should consider adding one if you have a website as well.
 
 ## Location
 
-I'm currently in La Jolla, California for my job at Salk Institute as a research assistant. 
+I'm currently in La Jolla, California for my job at Salk Institute as a research assistant.
+
+## Life
+
+There's room for improvement for the San Diego leg of my life for sure. It would be very nice if I don't get kicked out of my apartment for random reasons every 2 months! But at least the weather is nice so I could ride my bike every once in a while if I am not bed rotting.
 
 ## Work
 
-I'm currently working on the phenotyping team in Talmo Lab. Some MLOps (as in I sit there while the MLs operate themselves) and some working with mice. My main project involved a longitudinal study for pathogenesis of ALS using SOD1<sup>G93A</sup> mice. 
+I'm currently working on the phenotyping team in Talmo Lab. Some MLOps (as in I sit there while the MLs operate themselves) and some working with mice. My main project involved a longitudinal study for pathogenesis of ALS using SOD1<sup>G93A</sup> mice. It's been fulfilling and busy!
 
 ## Learning
 
 Currently I am trying to learn more about:
 
-- Web development: This website has been super fun to build and learn from. I'm probably going to learn Svelte next because it seems like a cool frame to use, perhaps I will build a database for it. 
-- LangChain: I need to prepare for the day AI replace me! Built a RAG ChatBot for my work as a hobbyist project. 
+- Prefect: A orchestrator that I've been using for work. It seems like it is super powerful and I want to be a master at it. Recently just became a contributor for it!
+- LangChain: I need to prepare for the day AI replace me! Built a RAG ChatBot for my work as a hobbyist project.
+- Web development: This website has been super fun to build and learn from. I'm probably going to learn Svelte next because it seems like a cool frame to use, perhaps I will build a database for it.
 - iOS Development: Trying to build my first iOS app [HealthViz](/projects/healthviz). This has been going slow...
-- Prefect: A orchestrator that I've been using for work. It seems like it is super powerful and I want to be a master at it. Recently just became a contributor for it! 
 
 ## Reading
 
 I'm currently reading [Honeybee Democracy](https://www.google.com/search?client=firefox-b-1-d&q=honeybee+democracy). Recommended by my professor Jack O'Brien.
 
-Next on the list: 
+Next on the list:
 
-Fluent Python by Luciano Ramalho. I want to learn more about how to write pythonic code. Recommended by Patrick. 
+Fluent Python by Luciano Ramalho. I want to learn more about how to write pythonic code. Recommended by Patrick.
 
 ## Thinking about
 
-Can you actually make a profit from online betting platforms like Kalshi?
+How do I make sure I don't spend 20 hours on instagram reels and tiktok every day...
