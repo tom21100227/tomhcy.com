@@ -27,8 +27,9 @@ Jekyll::Hooks.register :site, :post_write do |site|
   # Read JS files to inline
   js_files_to_inline = [
     "js/profile-icons.js",
-    "js/project-cards.js", 
+    "js/project-cards.js",
     "js/name-cycler.js",
+    "js/tagline-cycler.js",
     "js/music-status.js"
   ]
   

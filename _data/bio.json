@@ -27,7 +27,10 @@
       }
     ],
     "taglines": [
-      "Check out my <a href=\"https://www.discogs.com/user/ThomHan/collection\">Vinyl Collection on Discogs</a>!"
+      "Check out my <a href=\"https://www.discogs.com/user/ThomHan/collection\">Vinyl Collection on Discogs</a>!",
+      "Visit <a href=\"tomtopia.com\">Tomtopia</a>!",
+      "Less than 30% AI-generated content, I promise.",
+      "This tagline is written by Claude Code."
     ]
   },
   "interests": [
@@ -59,13 +62,7 @@
     },
     {
       "name": "Software",
-      "keywords": [
-        "Git",
-        "Docker",
-        "Jupyter Notebook",
-        "LLDB/GDB",
-        "XCode"
-      ]
+      "keywords": ["Git", "Docker", "Jupyter Notebook", "LLDB/GDB", "XCode"]
     },
     {
       "name": "Data Science",
@@ -80,10 +77,7 @@
     },
     {
       "name": "Machine Learning",
-      "keywords": [
-        "PyTorch",
-        "TensorFlow with Keras"
-      ]
+      "keywords": ["PyTorch", "TensorFlow with Keras"]
     },
     {
       "name": "Wet Lab",
@@ -127,9 +121,7 @@
       "startDate": "2025",
       "endDate": "Present",
       "summary": "Joint position in Dr. Talmo Pereira and Dr. Eiman Azim's labs in the ALS phenotyping group.",
-      "highlights": [
-        ""
-      ]
+      "highlights": [""]
     },
     {
       "company": "Bowdoin College Neuroscience Department",
