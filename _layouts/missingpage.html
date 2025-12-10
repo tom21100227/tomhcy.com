@@ -12,7 +12,7 @@ layout: default
 
       <h3>Essays</h3>
       <ul>
-        {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
+        {% assign essay_pages = site.pages | where: "type", "essay" | where_exp: "page", "page.draft != true" | sort: "date" | reverse %}
         {% for page in essay_pages %}
           <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
