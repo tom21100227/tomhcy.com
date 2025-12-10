@@ -12,7 +12,7 @@ I'm currently in La Jolla, California for my job at Salk Institute as a research
 
 ## Life
 
-There's room for improvement for the San Diego leg of my life for sure. It would be very nice if I don't get kicked out of my apartment for random reasons every 2 months! But at least the weather is nice so I could ride my bike every once in a while if I am not bed rotting.
+There's room for improvement for the San Diego leg of my life for sure. But at least the weather is nice so I could ride my bike every once in a while if I am not bed rotting.
 
 ## Work
 
@@ -37,4 +37,4 @@ Fluent Python by Luciano Ramalho. I want to learn more about how to write python
 
 ## Thinking about
 
-How do I make sure I don't spend 20 hours on instagram reels and tiktok every day...
+If Anthropic uses Claude Code to write Claude Code can you say that Claude Code use Claude to Code Claude Code?
