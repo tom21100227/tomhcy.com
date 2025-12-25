@@ -14,7 +14,7 @@ summary: "A health data visualization app developed for iOS widgets written comp
 ---
 
 <p style="text-align: center; margin: 2rem 0;">
-  <a href="https://testflight.apple.com/join/qQNE1ehH" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+  <a href="https://testflight.apple.com/join/CPcXtrnw" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
     Try HealthViz on TestFlight
   </a>
 </p>
