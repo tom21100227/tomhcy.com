@@ -10,25 +10,38 @@
   const THEME_LIGHT = 'light';
   const THEME_DARK = 'dark';
 
+  // Known-safe base URL for SimpleIcons CDN
+  const SIMPLEICONS_BASE = 'https://cdn.simpleicons.org/';
+
+  // Pattern for valid icon names (alphanumeric, hyphens, dots)
+  const ICON_PATTERN = /^[a-zA-Z0-9.\-]+$/;
+
+  // Pattern for valid hex colors (6 hex chars, no #)
+  const COLOR_PATTERN = /^[a-fA-F0-9]{6}$/;
+
   /**
-   * Validate that a URL is safe to use as an image source
-   * Prevents potential XSS via javascript:, data:, or other dangerous schemes
-   * @param {string} url - The URL to validate
-   * @returns {boolean} true if the URL is safe
+   * Validate and construct a safe SimpleIcons URL
+   * @param {string} icon - The icon name
+   * @param {string} color - The hex color (without #)
+   * @returns {string|null} The constructed URL or null if invalid
    */
-  function isSafeImageUrl(url) {
-    if (!url || typeof url !== 'string' || !url.trim()) {
-      return false;
+  function buildIconUrl(icon, color) {
+    if (!icon || !color) {
+      return null;
     }
 
-    // Allow relative URLs (no scheme)
-    if (!url.includes(':')) {
-      return true;
+    // Validate icon name contains only safe characters
+    if (!ICON_PATTERN.test(icon)) {
+      return null;
     }
 
-    // Only allow http: and https: schemes
-    var lowerUrl = url.toLowerCase().trim();
-    return lowerUrl.startsWith('https://') || lowerUrl.startsWith('http://');
+    // Validate color is a valid 6-char hex
+    if (!COLOR_PATTERN.test(color)) {
+      return null;
+    }
+
+    // Construct URL from known-safe base and validated parts
+    return SIMPLEICONS_BASE + encodeURIComponent(icon) + '/' + encodeURIComponent(color);
   }
 
   /**
@@ -111,16 +124,17 @@
       const img = picture.querySelector('img');
       if (!img) return;
 
-      // Use data attributes for icon URLs (set by Jekyll)
-      var newSrc;
-      if (theme === THEME_DARK) {
-        newSrc = img.getAttribute('data-src-dark') || img.getAttribute('data-src-light');
-      } else {
-        newSrc = img.getAttribute('data-src-light');
-      }
+      // Get icon name and colors from data attributes (set by Jekyll)
+      var icon = img.getAttribute('data-icon');
+      var color = theme === THEME_DARK
+        ? img.getAttribute('data-color-dark')
+        : img.getAttribute('data-color-light');
 
-      // Only update if we have a valid, safe URL that differs from current
-      if (newSrc && isSafeImageUrl(newSrc) && img.src !== newSrc) {
+      // Build URL from validated parts (returns null if invalid)
+      var newSrc = buildIconUrl(icon, color);
+
+      // Only update if we have a valid URL that differs from current
+      if (newSrc && img.src !== newSrc) {
         img.src = newSrc;
       }
     });

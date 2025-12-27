@@ -37,7 +37,7 @@
       <source media="(prefers-color-scheme: dark) and (prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color_dark | remove_first: '#' }}">
       <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}">
       <source media="(prefers-contrast: more)" srcset="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ high_color | remove_first: '#' }}">
-      <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" data-src-light="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" data-src-dark="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color_dark | remove_first: '#' }}" />
+      <img src="https://cdn.simpleicons.org/{{ tech_info.icon }}/{{ standard_color | remove_first: '#' }}" class="badge-icon" style="height: 1em; width: 1em;" alt="{{ tech_info.icon }} icon" loading="lazy" data-icon="{{ tech_info.icon }}" data-color-light="{{ standard_color | remove_first: '#' }}" data-color-dark="{{ standard_color_dark | remove_first: '#' }}" />
     </picture>
     {{ label_text }}
   {%- endcapture -%}
