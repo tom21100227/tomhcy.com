@@ -11,6 +11,27 @@
   const THEME_DARK = 'dark';
 
   /**
+   * Validate that a URL is safe to use as an image source
+   * Prevents potential XSS via javascript:, data:, or other dangerous schemes
+   * @param {string} url - The URL to validate
+   * @returns {boolean} true if the URL is safe
+   */
+  function isSafeImageUrl(url) {
+    if (!url || typeof url !== 'string' || !url.trim()) {
+      return false;
+    }
+
+    // Allow relative URLs (no scheme)
+    if (!url.includes(':')) {
+      return true;
+    }
+
+    // Only allow http: and https: schemes
+    var lowerUrl = url.toLowerCase().trim();
+    return lowerUrl.startsWith('https://') || lowerUrl.startsWith('http://');
+  }
+
+  /**
    * Get the stored theme preference
    * @returns {string} 'system', 'light', or 'dark'
    */
@@ -93,13 +114,13 @@
       // Use data attributes for icon URLs (set by Jekyll)
       var newSrc;
       if (theme === THEME_DARK) {
-        newSrc = img.getAttribute('data-src-dark') || img.getAttribute('data-src-light') || img.src;
+        newSrc = img.getAttribute('data-src-dark') || img.getAttribute('data-src-light');
       } else {
-        newSrc = img.getAttribute('data-src-light') || img.src;
+        newSrc = img.getAttribute('data-src-light');
       }
 
-      // Only update if the src has changed
-      if (img.src !== newSrc) {
+      // Only update if we have a valid, safe URL that differs from current
+      if (newSrc && isSafeImageUrl(newSrc) && img.src !== newSrc) {
         img.src = newSrc;
       }
     });
