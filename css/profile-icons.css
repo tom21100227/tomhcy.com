@@ -44,18 +44,32 @@
 @keyframes orbit-in {
   from {
     opacity: 0;
-    transform: 
-      translate(-50%, -50%) 
-      rotate(45deg) 
+    transform:
+      translate(-50%, -50%)
+      rotate(45deg)
       translate(calc(var(--radius) * 0.3))
       scale(0.01);
   }
   to {
     opacity: var(--end-opacity, 1);
-    transform: 
-      translate(-50%, -50%) 
-      rotate(var(--angle)) 
-      translate(calc(var(--radius) * 0.95)) 
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translate(calc(var(--radius) * 0.95))
+      rotate(calc(-1 * var(--angle)))
+      scale(var(--end-scale, 1));
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .profile-wrapper.loaded .profile-icon {
+    animation: none;
+    opacity: var(--end-opacity, 1);
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translate(calc(var(--radius) * 0.95))
       rotate(calc(-1 * var(--angle)))
       scale(var(--end-scale, 1));
   }
