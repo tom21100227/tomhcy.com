@@ -20,6 +20,7 @@ html {
   min-height: 100%;
   background-color: var(--tf-page-bg-color);
   scrollbar-width: none;
+  transition: background-color 0.3s ease;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   background-color: var(--tf-page-bg-color);
   margin: 0;
   -ms-overflow-style: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body::-webkit-scrollbar {
@@ -45,6 +47,7 @@ body > footer {
   display: flex;
   flex-direction: column;
   background-color: var(--tf-page-bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .site-main > .bg-gradient:only-child {
@@ -67,6 +70,20 @@ body > footer {
 
 a {
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Theme transition for navbar */
+.navbar {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.text-muted {
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 500px) {
@@ -217,6 +234,7 @@ a {
 .card-footer {
   background-color: var(--bs-white);
   border-top: none;
+  transition: background-color 0.3s ease;
 }
 
 .project-filter-toolbar {
@@ -343,7 +361,7 @@ a {
   }
 }
 .card {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
 }
 
 .card:hover {

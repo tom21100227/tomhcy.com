@@ -9,6 +9,7 @@
   /* Default to dark text on light gray background for sufficient contrast */
   color: #212529 !important;
   background-color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Dark mode via system preference */
