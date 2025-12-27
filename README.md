@@ -21,7 +21,7 @@ Changes made from the original TechFolios template include:
 
 - **Features**
     - [Animation effects for icons around profile picture](https://tomhcy.com/essays/for-this-site.html#profile-picture-animation)
-    - [Implemented dark mode](https://tomhcy.com/essays/for-this-site.html#dark-mode)
+    - [Implemented dark mode](https://tomhcy.com/essays/for-this-site.html#dark-mode) with toggles. 
     - Added a "Now Playing" Indicator with [Now Playing API](https://github.com/tom21100227/now-playing-api)
     - Clicking my name would cycle through different versions of my name.
     - [Added now page.](https://tomhcy.com/now/)
@@ -47,8 +47,7 @@ TODO:
 
 - Visitor counter (distinct visitors and page views I guess).
 - Add a Chinese (Simplified) Version, and the corresponding language toggle.
-- Toggle for Dark mode (not necessary)
-- AI Summary For Projects (cuz everyone loves that)
+- ~~AI Summary For Projects (cuz everyone loves that)~~ I actively hate this idea now! 
 - Profile Icons with the latest project that I am working on. 
 - Make my cool adaptive badge/pill system more generic so that I can use it for other things.
 
