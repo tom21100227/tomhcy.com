@@ -9,19 +9,31 @@
   /* Default to dark text on light gray background for sufficient contrast */
   color: #212529 !important;
   background-color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Dark mode via system preference */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     /* Use dark gray for pill backgrounds in dark mode - provides good contrast with light text */
     --tf-pill-bg: var(--bs-gray-700, #495057);
   }
 
-  .badge {
+  :root:not([data-theme="light"]) .badge {
     /* Light text on dark gray background in dark mode */
     color: var(--bs-gray-100, #f8f9fa) !important;
     background-color: var(--bs-gray-700, #495057);
   }
+}
+
+/* Dark mode via explicit user preference */
+[data-theme="dark"] {
+  --tf-pill-bg: var(--bs-gray-700, #495057);
+}
+
+[data-theme="dark"] .badge {
+  color: var(--bs-gray-100, #f8f9fa) !important;
+  background-color: var(--bs-gray-700, #495057);
 }
 
 @media (prefers-contrast: more) {
@@ -74,18 +86,24 @@
   }
 }
 
-/* Dark theme adjustments */
+/* Dark theme adjustments via system preference */
 @media (prefers-color-scheme: dark) {
-  .badge-standard-contrast {
+  :root:not([data-theme="light"]) .badge-standard-contrast {
     /* Use standard dark colors by default */
     border-color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
     color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
   }
 }
 
+/* Dark theme adjustments via explicit user preference */
+[data-theme="dark"] .badge-standard-contrast {
+  border-color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
+  color: var(--badge-standard-dark-color, var(--badge-original-color)) !important;
+}
+
 /* Dark theme with high contrast */
 @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
-  .badge-standard-contrast {
+  :root:not([data-theme="light"]) .badge-standard-contrast {
     /* Use high contrast dark colors when both dark mode and high contrast are requested */
     border-color: var(--badge-high-dark-color, var(--badge-original-color)) !important;
     color: var(--badge-high-dark-color, var(--badge-original-color)) !important;
@@ -127,11 +145,17 @@
   }
 }
 
-/* Dark theme uses dark-adjusted colors */
+/* Dark theme uses dark-adjusted colors via system preference */
 @media (prefers-color-scheme: dark) {
-  .badge-high-contrast {
+  :root:not([data-theme="light"]) .badge-high-contrast {
     /* Use dark-adjusted color if available, otherwise original color */
     border-color: var(--badge-dark-color, var(--badge-original-color)) !important;
     color: var(--badge-dark-color, var(--badge-original-color)) !important;
   }
+}
+
+/* Dark theme via explicit user preference */
+[data-theme="dark"] .badge-high-contrast {
+  border-color: var(--badge-dark-color, var(--badge-original-color)) !important;
+  color: var(--badge-dark-color, var(--badge-original-color)) !important;
 }

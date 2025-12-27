@@ -19,6 +19,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Early theme initialization to prevent flash of wrong theme
+      (function() {
+        try {
+          var pref = localStorage.getItem('theme-preference') || 'system';
+          if (pref === 'light' || pref === 'dark') {
+            document.documentElement.setAttribute('data-theme', pref);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="{{ title | xml_escape }}">
@@ -52,6 +63,7 @@
     <link rel="stylesheet" href="{{ site.baseurl}}/css/profile-icons.css">
     {% endif %}
     <script defer src="{{ site.baseurl }}/js/project-cards.js"></script>
+    <script defer src="{{ site.baseurl }}/js/theme-toggle.js"></script>
     {% if page.mermaid %}
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -86,6 +98,8 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/rouge/{{ site.rouge-theme}}">
     <!-- Load contrast utilities AFTER theme to override CSS variables -->
     <link rel="stylesheet" href="{{ site.baseurl}}/css/contrast-utils.css">
+    <!-- Theme toggle styles -->
+    <link rel="stylesheet" href="{{ site.baseurl}}/css/theme-toggle.css">
     <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
     {% if site.mathjax %}
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">

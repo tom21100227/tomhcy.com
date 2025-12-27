@@ -1,0 +1,74 @@
+/* Theme Toggle Styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--theme-toggle-bg, rgba(0, 0, 0, 0.05));
+  border-radius: 9999px;
+  padding: 0.2rem;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--theme-toggle-color, rgba(0, 0, 0, 0.5));
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--theme-toggle-hover-color, rgba(0, 0, 0, 0.75));
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--bs-link-color);
+  outline-offset: 2px;
+}
+
+.theme-toggle-btn.is-active {
+  background: var(--theme-toggle-active-bg, #fff);
+  color: var(--theme-toggle-active-color, #000);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn svg {
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+}
+
+/* Dark mode adjustments - via media query for system preference */
+@media (prefers-color-scheme: dark) {
+  .theme-toggle {
+    --theme-toggle-bg: rgba(255, 255, 255, 0.1);
+    --theme-toggle-color: rgba(255, 255, 255, 0.5);
+    --theme-toggle-hover-color: rgba(255, 255, 255, 0.75);
+    --theme-toggle-active-bg: rgba(255, 255, 255, 0.2);
+    --theme-toggle-active-color: #fff;
+  }
+}
+
+/* Dark mode via data attribute override */
+[data-theme="dark"] .theme-toggle {
+  --theme-toggle-bg: rgba(255, 255, 255, 0.1);
+  --theme-toggle-color: rgba(255, 255, 255, 0.5);
+  --theme-toggle-hover-color: rgba(255, 255, 255, 0.75);
+  --theme-toggle-active-bg: rgba(255, 255, 255, 0.2);
+  --theme-toggle-active-color: #fff;
+}
+
+/* Light mode via data attribute override */
+[data-theme="light"] .theme-toggle {
+  --theme-toggle-bg: rgba(0, 0, 0, 0.05);
+  --theme-toggle-color: rgba(0, 0, 0, 0.5);
+  --theme-toggle-hover-color: rgba(0, 0, 0, 0.75);
+  --theme-toggle-active-bg: #fff;
+  --theme-toggle-active-color: #000;
+}

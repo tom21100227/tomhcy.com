@@ -20,6 +20,7 @@ html {
   min-height: 100%;
   background-color: var(--tf-page-bg-color);
   scrollbar-width: none;
+  transition: background-color 0.3s ease;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   background-color: var(--tf-page-bg-color);
   margin: 0;
   -ms-overflow-style: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body::-webkit-scrollbar {
@@ -45,6 +47,7 @@ body > footer {
   display: flex;
   flex-direction: column;
   background-color: var(--tf-page-bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .site-main > .bg-gradient:only-child {
@@ -67,6 +70,20 @@ body > footer {
 
 a {
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Theme transition for navbar */
+.navbar {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.text-muted {
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 500px) {
@@ -217,6 +234,7 @@ a {
 .card-footer {
   background-color: var(--bs-white);
   border-top: none;
+  transition: background-color 0.3s ease;
 }
 
 .project-filter-toolbar {
@@ -343,7 +361,7 @@ a {
   }
 }
 .card {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
 }
 
 .card:hover {
@@ -397,8 +415,9 @@ a {
   white-space: nowrap;
 }
 
+/* Dark mode via system preference */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     /* Base Colors */
     --bs-body-bg: #121212;
     --bs-body-color: #e0e0e0;
@@ -426,21 +445,21 @@ a {
     --bs-gradient: none;
     --bs-card-bg: var(--tf-surface-bg-color);
     --bs-badge-color: #e0e0e0;
-    
+
     /* Pill (Hashtags) Background */
     --tf-pill-bg: var(--bs-gray-900);
   }
 
-  html {
+  html:not([data-theme="light"]) {
     background-color: var(--bs-body-bg);
   }
 
-  body {
+  body:not([data-theme="light"] body) {
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
   }
-  
-  .navbar {
+
+  :root:not([data-theme="light"]) .navbar {
     /* Set background to be fully transparent to let body background show through */
     --bs-bg-opacity: 0;
     --bs-navbar-color: rgba(230, 230, 230, 0.75);
@@ -450,31 +469,108 @@ a {
     --bs-border-color: var(--bs-gray-500);
   }
 
-  footer.navbar {
+  :root:not([data-theme="light"]) footer.navbar {
     color: rgba(255, 255, 255, 0.75);
   }
 
-  .text-muted {
+  :root:not([data-theme="light"]) .text-muted {
     color: rgba(255, 255, 255, 0.5) !important;
   }
 
-  .btn-outline-dark {
+  :root:not([data-theme="light"]) .btn-outline-dark {
     color: var(--bs-body-color);
     border-color: var(--bs-body-color);
   }
 
-  .card {
+  :root:not([data-theme="light"]) .card {
     --bs-card-bg: var(--bs-body-bg);
   }
 
-  .card-footer {
+  :root:not([data-theme="light"]) .card-footer {
     /* Ensure footer inherits the card's background color */
     background-color: var(--bs-card-bg);
   }
 
-  .music-refresh-button:hover {
+  :root:not([data-theme="light"]) .music-refresh-button:hover {
     background-color: rgba(255, 255, 255, 0.08);
   }
+}
+
+/* Dark mode via explicit user preference */
+[data-theme="dark"] {
+  /* Base Colors */
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+
+  /* Elevated Surface Colors */
+  --tf-surface-bg-color: #1c1c1c;
+  --tf-card-hover-shadow-color: rgba(1, 1, 1, 0.5);
+
+  /* Links */
+  --bs-link-color: #58a6ff;
+  --bs-link-hover-color: #1f6feb;
+
+  /* Icons */
+  --tf-icon-fill: var(--bs-gray-200);
+  --tf-icon-hover: var(--bs-gray-400);
+
+  /* Page Sections */
+  --tf-page-bg-color: var(--bs-body-bg);
+  --tf-footer-bg-color: var(--tf-surface-bg-color);
+  --tf-projects-bg-color: var(--tf-surface-bg-color);
+  --tf-essays-bg-color: var(--tf-surface-bg-color);
+
+  /* Bootstrap Component Overrides */
+  --bs-light-rgb: 33,37,41;
+  --bs-gradient: none;
+  --bs-card-bg: var(--tf-surface-bg-color);
+  --bs-badge-color: #e0e0e0;
+
+  /* Pill (Hashtags) Background */
+  --tf-pill-bg: var(--bs-gray-900);
+}
+
+html[data-theme="dark"] {
+  background-color: var(--bs-body-bg);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-theme="dark"] .navbar {
+  --bs-bg-opacity: 0;
+  --bs-navbar-color: rgba(230, 230, 230, 0.75);
+  --bs-navbar-brand-color: var(--bs-navbar-color);
+  --bs-navbar-hover-color: #fff;
+  --bs-navbar-brand-hover-color: #fff;
+  --bs-border-color: var(--bs-gray-500);
+}
+
+[data-theme="dark"] footer.navbar {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-theme="dark"] .text-muted {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-outline-dark {
+  color: var(--bs-body-color);
+  border-color: var(--bs-body-color);
+}
+
+[data-theme="dark"] .card {
+  --bs-card-bg: var(--bs-body-bg);
+}
+
+[data-theme="dark"] .card-footer {
+  background-color: var(--bs-card-bg);
+}
+
+[data-theme="dark"] .music-refresh-button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 #cycling-name {
