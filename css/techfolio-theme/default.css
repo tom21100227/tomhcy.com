@@ -3,6 +3,27 @@
 /* Use Open Sans as the default sans serif font. */
 /* Fonts are now loaded in HTML head for better performance */
 
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bs-primary, #0d6efd);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 0.25rem 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--bs-link-color, #0d6efd);
+  outline-offset: 2px;
+}
+
 /* See https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables for variables to override. */
 :root {
   --bs-font-sans-serif: "Open Sans", sans-serif;
@@ -254,11 +275,16 @@ a {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.project-filter-button:hover,
+.project-filter-button:hover {
+  background-color: var(--filter-hover-color, rgba(0, 0, 0, 0.05));
+  color: var(--filter-text-color, inherit);
+}
+
 .project-filter-button:focus-visible {
   background-color: var(--filter-hover-color, rgba(0, 0, 0, 0.05));
   color: var(--filter-text-color, inherit);
-  outline: none;
+  outline: 2px solid var(--bs-link-color);
+  outline-offset: 2px;
 }
 
 .project-filter-button.is-active {
@@ -485,4 +511,36 @@ a {
 }
 .badge {
   border: 1px solid transparent
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all transitions */
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Keep skip link functional but instant */
+  .skip-link {
+    transition: none;
+  }
+
+  /* Disable card hover animations */
+  .card:hover {
+    transform: none;
+  }
+
+  /* Disable pulse animation on album art */
+  .pulsing-img {
+    animation: none;
+  }
+
+  /* Disable spin animation on refresh button */
+  .music-refresh-button.is-loading .refresh-icon {
+    animation: none;
+  }
 }
