@@ -1,6 +1,6 @@
 /* Default theme. Simple, yet elegant. */
 
-/* Use Open Sans as the default sans serif font. */
+/* Fraunces for headings, Atkinson Hyperlegible for body */
 /* Fonts are now loaded in HTML head for better performance */
 
 /* Skip link for keyboard navigation */
@@ -26,7 +26,8 @@
 
 /* See https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables for variables to override. */
 :root {
-  --bs-font-sans-serif: "Open Sans", sans-serif;
+  --bs-font-sans-serif: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif;
+  --tf-font-heading: "Fraunces", Georgia, serif;
   --bs-link-color: var(--bs-blue);
   --tf-pill-bg: var(--bs-gray);
   --tf-icon-fill: var(--bs-gray);
@@ -35,6 +36,22 @@
   --tf-footer-bg-color: var(--bs-gray-200);
   --tf-projects-bg-color: var(--bs-gray-100);
   --tf-card-hover-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply Fraunces to all headings */
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--tf-font-heading);
+}
+
+/* Navbar brand uses heading font */
+.navbar-brand {
+  font-family: var(--tf-font-heading);
+}
+
+/* Card titles use heading font */
+.card-title {
+  font-family: var(--tf-font-heading);
 }
 
 html {
