@@ -23,7 +23,7 @@
       <div class="col-lg-8 align-self-center">
         <h1 class="display-4 text-center" id="cycling-name">{{ site.data.bio.basics.name }}</h1>
         <p class="lead text-center">{{ site.data.bio.basics.label }}</p>
-        <p class="lead m-0" id="tagline" data-taglines='{{ site.data.bio.basics.taglines | jsonify }}'>
+        <p class="lead m-0" id="tagline" data-taglines='{{ site.data.bio.basics.taglines | jsonify | escape }}'>
           {{ site.data.bio.basics.taglines | first }}
         </p>
         
