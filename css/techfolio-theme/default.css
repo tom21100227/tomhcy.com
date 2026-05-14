@@ -218,6 +218,30 @@ a {
   animation: spin 0.8s linear infinite;
 }
 
+#music-status.brat-mode {
+  display: inline-block;
+  background-color: #8ACE00;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+  padding: 0.15em 0.4em;
+  filter: blur(0.6px);
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+#music-status.brat-mode a {
+  color: #000;
+  text-decoration: underline;
+}
+
+#music-status.brat-mode svg {
+  filter: none;
+}
+
 .music-refresh-button:disabled {
   pointer-events: none;
   opacity: 0.75;

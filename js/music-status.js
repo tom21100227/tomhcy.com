@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function setLoadingState() {
+    statusEl.classList.remove('brat-mode');
     statusEl.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Loading...';
     if (refreshBtn) {
       refreshBtn.disabled = true;
@@ -95,6 +96,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var sourceIcon = data.source === 'Apple Music' ? appleMusicIcon : spotifyIcon;
 
     statusEl.innerHTML = prefix + ': ' + songTitle + ' by ' + data.artist + ' on ' + data.source + ' ' + sourceIcon;
+
+    var isBrat = data.isPlaying
+      && /brat/i.test(data.album || '')
+      && /charli\s*xcx/i.test(data.artist || '');
+    statusEl.classList.toggle('brat-mode', isBrat);
 
     if (albumLink) {
       if (data.songUrl) {
