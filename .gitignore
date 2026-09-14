@@ -1,20 +1,22 @@
-_site/
+node_modules
+
+# Build output
+/.svelte-kit
+/build
+
+# OS / editors
 .DS_Store
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-Gemfile.lock
+Thumbs.db
 .idea
 
-# WSL fix
+# Env
+.env
+.env.*
+!.env.example
 
-.bundle/
-vendor/
-# Node.js / npm
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
+# Tooling scratch
 .playwright-mcp
