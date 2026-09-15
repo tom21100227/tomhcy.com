@@ -18,7 +18,7 @@ The Jekyll + TechFolios + Bootstrap stack had grown a lot of machinery (badge co
 
 ## Impact
 
-- Affected specs: `footer` (modified), `tech-badges` (removed), new `site-shell`.
+- Affected specs: `footer` (modified), `tech-badges` (capability removed entirely; its spec directory is deleted rather than rebuilt, since a spec with no requirements is invalid), new `site-shell`.
 - Affected code: everything. Jekyll files (`_layouts`, `_includes`, `_plugins`, `_config*.yml`, `css/`, `js/`, `Gemfile`) are deleted. Content moves to `src/content/`, `bio.json` to `src/lib/data/`, images to `static/img/`.
 - Unpublished essays and projects (`published: false` / `draft: true`) are not prerendered, same as before.
 - Open follow-ups: Strava endpoint on the worker, the real Strava profile URL in `src/lib/site.ts`, and pruning `static/img` of assets only the old theme used (bootstrap-icons.svg, profile-icons/).
