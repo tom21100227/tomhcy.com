@@ -45,6 +45,31 @@
 	--art-a: #3a3f45;
 }
 
+/* Theme changes cross-fade the whole page together. src/lib/theme.svelte.ts
+   holds this attribute for the length of the swap, so the transition exists
+   only then and never touches hover states or the brat easter egg.
+   Duration must match SWAP_MS in that file. */
+:root[data-theme-switching],
+:root[data-theme-switching] *,
+:root[data-theme-switching] *::before,
+:root[data-theme-switching] *::after {
+	transition:
+		background-color 240ms ease,
+		border-color 240ms ease,
+		color 240ms ease,
+		fill 240ms ease,
+		stroke 240ms ease !important;
+}
+/* Asked for less motion: swap instantly instead. */
+@media (prefers-reduced-motion: reduce) {
+	:root[data-theme-switching],
+	:root[data-theme-switching] *,
+	:root[data-theme-switching] *::before,
+	:root[data-theme-switching] *::after {
+		transition: none !important;
+	}
+}
+
 /* ---- base ---- */
 *,
 *::before,
