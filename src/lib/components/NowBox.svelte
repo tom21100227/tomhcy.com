@@ -164,4 +164,5 @@
 			<path d="M13.5 2.5v3h-3" />
 		</svg>
 	</button>
+	<a class="whatis" href="/projects/now-playing-indicator">What is this?</a>
 </div>

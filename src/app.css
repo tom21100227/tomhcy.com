@@ -219,7 +219,9 @@ pre {
 /* ---- the live box (music, else a ride, else quiet) ---- */
 .slot {
 	grid-column: 2;
-	align-self: stretch;
+	/* Natural height, parked at the bottom so its lower edge meets the photo's.
+	   Whatever space is left sits between the bio and the card. */
+	align-self: end;
 	position: relative;
 	display: grid;
 	grid-template-columns: 76px minmax(0, 1fr);
@@ -228,6 +230,9 @@ pre {
 	min-height: 116px;
 	padding: 18px 20px;
 	border: 1px dashed var(--rule);
+	/* The card keeps its own compact type scale, independent of the page's root size. */
+	font-size: 16px;
+	line-height: 1.5;
 	transition:
 		background-color 240ms ease,
 		border-color 240ms ease,
@@ -247,7 +252,7 @@ pre {
 }
 .track {
 	margin: 0;
-	font-size: 1.05rem;
+	font-size: 17px;
 	line-height: 1.35;
 }
 .track a {
@@ -258,9 +263,15 @@ pre {
 }
 .sub {
 	margin: 4px 0 0;
-	font-size: 0.92rem;
+	font-size: 14.5px;
 	color: var(--muted);
 	line-height: 1.4;
+}
+.slot .eyebrow {
+	font-size: 11.5px;
+}
+.slot .mono {
+	font-size: 12.5px;
 }
 @media (prefers-reduced-motion: no-preference) {
 	.art.pulsing {
@@ -324,11 +335,42 @@ pre {
 	}
 }
 
+/* "What is this?" — bottom-right, appears on hover/focus; always visible where there is no hover */
+.slot .whatis {
+	position: absolute;
+	right: 12px;
+	bottom: 6px;
+	font-family: var(--mono);
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	color: var(--muted);
+	opacity: 0;
+	transform: translateY(0.2rem);
+	transition:
+		opacity 160ms ease,
+		transform 160ms ease;
+}
+.slot:hover .whatis,
+.slot:focus-within .whatis,
+.slot .whatis:focus-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+.slot .whatis:hover {
+	color: var(--link);
+}
+@media (hover: none) {
+	.slot .whatis {
+		opacity: 1;
+	}
+}
+
 /* brat easter egg: lime green, plain Arial, lowercase, slightly out of focus like the cover */
 .slot.brat {
 	background: #8ace00;
 	border-color: #8ace00;
 	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .slot.brat .text {
 	font-family: Arial, Helvetica, sans-serif;
@@ -344,13 +386,14 @@ pre {
 .slot.brat .sub,
 .slot.brat .mono,
 .slot.brat .track a,
-.slot.brat .refresh {
+.slot.brat .refresh,
+.slot.brat .whatis {
 	color: #000;
 	font-family: inherit;
 	letter-spacing: inherit;
 }
 .slot.brat .eyebrow {
-	font-size: 0.8rem;
+	font-size: 13px;
 	text-transform: lowercase;
 }
 .slot.brat .track a {
