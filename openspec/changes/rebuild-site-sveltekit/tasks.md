@@ -26,6 +26,6 @@
 ## 5. Ship
 - [x] 5.1 GitHub Actions: `npm ci && npm run build` → Pages
 - [x] 5.2 Update CLAUDE.md, README.md, openspec/project.md
-- [ ] 5.3 Tom reviews on the dev server; iterate
+- [x] 5.3 Tom reviews on the dev server; iterate
 - [ ] 5.4 Merge to main; confirm deploy; spot-check old URLs
 - [ ] 5.5 Follow-ups: Strava endpoint + profile URL; prune unused `static/img` assets
