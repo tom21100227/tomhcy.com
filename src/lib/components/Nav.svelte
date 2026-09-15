@@ -36,5 +36,5 @@
 	{#each links as link (link.href)}
 		<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>
 	{/each}
-	<ThemeToggle />
+	<ThemeToggle class="theme-wide" />
 </nav>
