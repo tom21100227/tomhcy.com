@@ -27,5 +27,6 @@
 - [x] 5.1 GitHub Actions: `npm ci && npm run build` → Pages
 - [x] 5.2 Update CLAUDE.md, README.md, openspec/project.md
 - [x] 5.3 Tom reviews on the dev server; iterate
-- [ ] 5.4 Merge to main; confirm deploy; spot-check old URLs
-- [ ] 5.5 Follow-ups: Strava endpoint + profile URL; prune unused `static/img` assets
+- [x] 5.4 Merge to main; confirm deploy; spot-check old URLs
+
+Follow-ups tracked outside this change: Strava endpoint for the live box, pruning unused `static/img` assets, analytics worker returning 404 (backend repo).
