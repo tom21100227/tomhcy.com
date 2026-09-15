@@ -799,7 +799,8 @@ pre {
 	}
 	.photo {
 		grid-row: auto;
-		width: 160px;
+		width: 180px;
+		justify-self: center;
 	}
 	.slot {
 		grid-column: 1;
