@@ -60,6 +60,17 @@ npm run check        # svelte-check (types + templates); keep it at 0 errors
 - **Old Bootstrap classes** (`img-fluid`, `rounded`, `mx-auto`, `btn`, …) still appear in a few essays; `app.css` shims them under `.prose`. Prefer plain markdown for new content.
 - **Fonts** are self-hosted via Fontsource packages imported in `+layout.svelte`. Do not add Google Fonts links.
 
+## Swapping the Profile Photo
+
+`static/img/me.jpeg` is a JPEG with an embedded HDR gain map made from the iPhone HEIC, so Safari and Chrome show it in HDR on capable displays and everything else shows the SDR base. To regenerate from a new HEIC (export it from Photos with File → Export → Export Unmodified Original):
+
+```bash
+xcrun swiftc -O -o /tmp/hdrjpeg scripts/hdrjpeg.swift
+/tmp/hdrjpeg ~/Desktop/IMG_XXXX.heic static/img/me.jpeg 900 1200 0.82
+```
+
+Then update the `width`/`height` on the `<img>` in `src/routes/+page.svelte` if the aspect ratio changed. The photo frame's ratio is set in `.photo` in `app.css` (`aspect-ratio: 3 / 4`).
+
 ## Adding Content
 
 - **Essay**: drop a markdown file in `src/content/essays/` with the front matter above and `published: true`. Images go in `static/img/<slug>/` and are referenced as `/img/<slug>/...`.

@@ -66,7 +66,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 .wrap {
-	max-width: 860px;
+	max-width: 980px;
 	margin: 0 auto;
 	padding-inline: 24px;
 	padding-block: clamp(40px, 8vh, 88px) 56px;
@@ -186,8 +186,10 @@ pre {
 /* ---- home hero ---- */
 .hero {
 	display: grid;
-	grid-template-columns: 232px minmax(0, 1fr);
-	grid-template-rows: auto auto;
+	/* Photo spans both rows; the second row takes whatever height is left so the
+	   live box's bottom edge lines up with the photo's. */
+	grid-template-columns: 320px minmax(0, 1fr);
+	grid-template-rows: auto 1fr;
 	column-gap: 36px;
 	row-gap: 22px;
 }
@@ -217,7 +219,7 @@ pre {
 /* ---- the live box (music, else a ride, else quiet) ---- */
 .slot {
 	grid-column: 2;
-	align-self: start;
+	align-self: stretch;
 	position: relative;
 	display: grid;
 	grid-template-columns: 76px minmax(0, 1fr);
