@@ -365,39 +365,46 @@ pre {
 	}
 }
 
-/* brat easter egg: lime green, plain Arial, lowercase, slightly out of focus like the cover */
+/* brat easter egg: lime green, plain Arial, lowercase, one size for everything,
+   slightly out of focus like the cover */
 .slot.brat {
 	background: #8ace00;
 	border-color: #8ace00;
 	color: #000;
-	font-family: Arial, Helvetica, sans-serif;
 }
 .slot.brat .text {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 400;
-	text-transform: lowercase;
-	letter-spacing: -0.01em;
 	filter: blur(0.6px);
 	-webkit-font-smoothing: none;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeSpeed;
 }
+.slot.brat .text,
 .slot.brat .eyebrow,
+.slot.brat .track,
 .slot.brat .sub,
 .slot.brat .mono,
 .slot.brat .track a,
-.slot.brat .refresh,
-.slot.brat .whatis {
+.slot.brat .whatis,
+.slot.brat .refresh {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+	text-transform: lowercase;
 	color: #000;
-	font-family: inherit;
-	letter-spacing: inherit;
 }
 .slot.brat .eyebrow {
-	font-size: 13px;
-	text-transform: lowercase;
+	margin: 0 0 2px;
+}
+.slot.brat .sub {
+	margin: 2px 0 0;
 }
 .slot.brat .track a {
 	text-decoration: underline;
+}
+.slot.brat .whatis {
+	font-size: 12px;
 }
 
 /* ---- rule, footer, note ---- */
