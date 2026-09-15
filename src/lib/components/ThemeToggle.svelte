@@ -33,4 +33,4 @@
 	}
 </script>
 
-<button type="button" onclick={cycle} aria-label="Switch color theme (currently {pref})">theme: {pref}</button>
+<button type="button" class="theme" onclick={cycle} aria-label="Switch color theme (currently {pref})">theme: {pref}</button>

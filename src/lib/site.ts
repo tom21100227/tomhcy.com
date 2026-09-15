@@ -13,6 +13,6 @@ export const site = {
 	 * Strava endpoint. Expected response: { name, distance, movingTime, elevation, when, url }.
 	 */
 	stravaApi: '',
-	strava: 'https://www.strava.com/',
+	strava: 'https://www.strava.com/athletes/109733583',
 	shenanigans: 'https://tomtopia.com'
 };

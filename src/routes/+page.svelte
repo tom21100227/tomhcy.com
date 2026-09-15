@@ -20,7 +20,6 @@
 		<img src="/img/me.webp" alt="Tom Han" width="450" height="450" fetchpriority="high" />
 	</div>
 	<div class="bio">
-		<p class="role">{@html bio.basics.label}</p>
 		<p class="about">{@html bio.basics.summary}</p>
 	</div>
 	<NowBox />

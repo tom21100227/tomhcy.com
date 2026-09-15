@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { site } from '$lib/site';
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	const links = [
 		{ href: '/now/', label: 'Now' },
@@ -35,4 +36,5 @@
 	{#each links as link (link.href)}
 		<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>
 	{/each}
+	<ThemeToggle />
 </nav>

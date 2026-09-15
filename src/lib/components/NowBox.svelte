@@ -30,6 +30,7 @@
 		| { kind: 'quiet' };
 
 	let slot = $state<Slot>({ kind: 'loading' });
+	let refreshing = $state(false);
 
 	async function fetchJson<T>(url: string): Promise<T | null> {
 		try {
@@ -42,8 +43,11 @@
 	}
 
 	/** Music first. If nothing's playing, a ride. If no ride either, say so quietly. */
-	async function load() {
-		const music = await fetchJson<Music>(site.musicApi);
+	async function load(force = false) {
+		const musicUrl = force
+			? site.musicApi + (site.musicApi.includes('?') ? '&' : '?') + 'noCache=true'
+			: site.musicApi;
+		const music = await fetchJson<Music>(musicUrl);
 		if (music?.success && music.title) {
 			slot = { kind: 'music', data: music };
 			return;
@@ -58,7 +62,19 @@
 		slot = { kind: 'quiet' };
 	}
 
-	onMount(load);
+	async function refresh() {
+		if (refreshing) return;
+		refreshing = true;
+		try {
+			await load(true);
+		} finally {
+			refreshing = false;
+		}
+	}
+
+	onMount(() => {
+		load();
+	});
 
 	const brat = $derived(
 		slot.kind === 'music' &&
@@ -71,7 +87,7 @@
 <div class="slot" class:brat aria-live="polite">
 	{#if slot.kind === 'loading'}
 		<div class="art skeleton" aria-hidden="true"></div>
-		<div>
+		<div class="text">
 			<span class="eyebrow">Now playing</span>
 			<p class="track muted">Checking what's on…</p>
 		</div>
@@ -86,7 +102,7 @@
 			height="76"
 			decoding="async"
 		/>
-		<div>
+		<div class="text">
 			<span class="eyebrow">{d.isPlaying ? 'Now playing' : 'Recently played'}</span>
 			<p class="track">
 				{#if d.songUrl}
@@ -114,7 +130,7 @@
 				<circle cx="68" cy="14" r="3" fill="var(--paper)" stroke="var(--teak)" stroke-width="2" />
 			</svg>
 		</div>
-		<div>
+		<div class="text">
 			<span class="eyebrow">Nothing playing · last ride</span>
 			<p class="track">
 				{#if r.url}<a href={r.url} target="_blank" rel="noopener">{r.name}</a>{:else}{r.name}{/if}
@@ -126,10 +142,26 @@
 		</div>
 	{:else}
 		<div class="art" aria-hidden="true"></div>
-		<div>
+		<div class="text">
 			<span class="eyebrow">Quiet</span>
 			<p class="track">Nothing playing right now.</p>
 			<p class="sub">Probably a movie night.</p>
 		</div>
 	{/if}
+
+	<button
+		type="button"
+		class="refresh"
+		class:is-loading={refreshing}
+		disabled={refreshing || slot.kind === 'loading'}
+		aria-busy={refreshing}
+		aria-label="Refresh now playing"
+		title="Refresh"
+		onclick={refresh}
+	>
+		<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9" />
+			<path d="M13.5 2.5v3h-3" />
+		</svg>
+	</button>
 </div>
