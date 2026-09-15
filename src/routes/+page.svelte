@@ -17,7 +17,7 @@
 
 <section class="hero">
 	<div class="photo">
-		<img src="/img/me.webp" alt="Tom Han on a bike ride along the boardwalk" width="900" height="900" fetchpriority="high" />
+		<img src="/img/me.webp" alt="Tom Han on a bike ride along the boardwalk" width="900" height="1200" fetchpriority="high" />
 	</div>
 	<div class="bio">
 		<p class="about">{@html bio.basics.summary}</p>

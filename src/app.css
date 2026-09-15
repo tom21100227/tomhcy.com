@@ -195,7 +195,7 @@ pre {
 	grid-row: 1 / 3;
 	align-self: start;
 	position: relative;
-	aspect-ratio: 1;
+	aspect-ratio: 3 / 4;
 	overflow: hidden;
 	background: var(--rule);
 }
