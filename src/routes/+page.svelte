@@ -17,7 +17,11 @@
 
 <section class="hero">
 	<div class="photo">
-		<img src="/img/me.jpeg" alt="Tom Han on a bike ride along the boardwalk" width="900" height="1200" fetchpriority="high" />
+		<!-- Phones hide the photo; the empty source keeps them from downloading it. -->
+		<picture>
+			<source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+			<img src="/img/me.jpeg" alt="Tom Han on a bike ride along the boardwalk" width="900" height="1200" fetchpriority="high" />
+		</picture>
 	</div>
 	<div class="bio">
 		<p class="about">{@html bio.basics.summary}</p>

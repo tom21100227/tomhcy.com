@@ -806,9 +806,7 @@ pre {
 		row-gap: 20px;
 	}
 	.photo {
-		grid-row: auto;
-		width: 180px;
-		justify-self: center;
+		display: none;
 	}
 	.slot {
 		grid-column: 1;
