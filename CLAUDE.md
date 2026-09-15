@@ -77,6 +77,14 @@ Then update the `width`/`height` on the `<img>` in `src/routes/+page.svelte` if 
 - **Project**: same in `src/content/projects/`. Leave the body empty if the project only needs a card; give it a body for a full page.
 - **Now**: edit `src/content/now.md`.
 
+## Embeds in Content
+
+Markdown is rendered to an HTML string at build time and injected with `{@html}`. On a client-side navigation that goes through `innerHTML`, and **a `<script>` tag inserted that way never runs**. So pasting a vendor's full embed snippet works on a direct page load and silently does nothing when someone clicks through from another page.
+
+For Strava, paste only the placeholder `<div>` from the embed dialog and drop the `<script>` tag. `src/lib/embeds.ts` loads the script itself, and only on pages that contain a placeholder. The root layout calls it after every navigation.
+
+Any other script-driven embed needs the same treatment: add a function to `src/lib/embeds.ts` and call it from `mountEmbeds()`. Plain `<iframe>` embeds (YouTube, for instance) need none of this and can go straight in the markdown.
+
 ## Conventions
 
 - TypeScript, Svelte 5 runes (`$state`, `$derived`, `$props`). Tabs for indentation (Prettier defaults from the SvelteKit template).

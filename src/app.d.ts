@@ -12,6 +12,8 @@ declare global {
 	interface Window {
 		/** Exposed by static/metrics.js so client-side navigations can beacon a page view. */
 		__metricsPageview?: () => void;
+		/** Exposed by Strava's embed.js; rescans the page for embed placeholders. */
+		__STRAVA_EMBED_BOOTSTRAP__?: () => void;
 	}
 }
 

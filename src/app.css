@@ -666,8 +666,12 @@ pre {
 	background: none;
 	text-align: center;
 }
+/* Embeds (Strava, video) sit centred in the column. Strava's script sets the
+   iframe's width inline, so centring has to come from the margins. */
 .prose iframe {
+	display: block;
 	max-width: 100%;
+	margin-inline: auto;
 	border: 1px solid var(--rule);
 }
 /* Shiki dual themes: colors come from --shiki-light / --shiki-dark on each span. */

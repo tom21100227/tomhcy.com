@@ -8,12 +8,15 @@
 	import { afterNavigate } from '$app/navigation';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { mountEmbeds } from '$lib/embeds';
 
 	let { children, data } = $props();
 
-	// metrics.js beacons on first load; client-side navigations need a nudge.
+	// Runs after the first render too, not just later navigations.
 	afterNavigate((nav) => {
+		// metrics.js beacons on first load; client-side navigations need a nudge.
 		if (nav.from && typeof window.__metricsPageview === 'function') window.__metricsPageview();
+		mountEmbeds();
 	});
 </script>
 

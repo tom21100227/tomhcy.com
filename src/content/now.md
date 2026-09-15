@@ -12,6 +12,10 @@ I'm in La Jolla, California for my job at Salk Institute as a research assistant
 
 ## Life
 
+The most epic update is that I just completed (half) of a bike ride from San Diego to LA! I stopped at Irvine and had my friend pick me up because I wanted to spend more time with my friend rather than being sweaty in not-so-scenic LA metro. 
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="19745609882" data-style="standard" data-from-embed="false" data-token="s2gnZgF5ZD7-HHn4KUpHLfyvk75vbXXZym4pGrwl3EM"></div>
+
 I am on a journey to shift away from consuming vertical video less than a minute long. Movies, YouTube Documentaries, Books, I just want to be consuming media made with soul rather than algorithm slop. We'll see if this actually helps. I moved to a place that's within 5 minutes walk of an AMC theater so watching a movie after work has been my new hobby! 
 
 ## Work
@@ -20,7 +24,7 @@ I'm currently working on the phenoinformatics team in Talmo Lab. Some MLOps (as 
 
 ## Learning
 
-Currently I am trying to learn more about State-based Model: A coworker recommended me [this awesome YouTube video on it](https://www.youtube.com/watch?v=9TwfcHbBbeY&t=1s) and I've been working through it, wish I had stronger of a background in mathematics for things like this! 
+Currently I am trying to learn more about state-based Model: A coworker recommended me [this awesome YouTube video on it](https://www.youtube.com/watch?v=9TwfcHbBbeY&t=1s) and I've been working through it, wish I had stronger of a background in mathematics for things like this! 
 
 ## Media Consumption
 
