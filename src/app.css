@@ -230,9 +230,6 @@ pre {
 	min-height: 116px;
 	padding: 18px 20px;
 	border: 1px dashed var(--rule);
-	/* The card keeps its own compact type scale, independent of the page's root size. */
-	font-size: 16px;
-	line-height: 1.5;
 	transition:
 		background-color 240ms ease,
 		border-color 240ms ease,
@@ -252,7 +249,7 @@ pre {
 }
 .track {
 	margin: 0;
-	font-size: 17px;
+	font-size: 1.05rem;
 	line-height: 1.35;
 }
 .track a {
@@ -263,15 +260,9 @@ pre {
 }
 .sub {
 	margin: 4px 0 0;
-	font-size: 14.5px;
+	font-size: 0.92rem;
 	color: var(--muted);
 	line-height: 1.4;
-}
-.slot .eyebrow {
-	font-size: 11.5px;
-}
-.slot .mono {
-	font-size: 12.5px;
 }
 @media (prefers-reduced-motion: no-preference) {
 	.art.pulsing {
@@ -341,7 +332,7 @@ pre {
 	right: 12px;
 	bottom: 6px;
 	font-family: var(--mono);
-	font-size: 11px;
+	font-size: 0.62rem;
 	letter-spacing: 0.04em;
 	color: var(--muted);
 	opacity: 0;
@@ -387,7 +378,7 @@ pre {
 .slot.brat .whatis,
 .slot.brat .refresh {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 15px;
+	font-size: 0.9rem;
 	font-weight: 400;
 	line-height: 1.35;
 	letter-spacing: -0.01em;
@@ -404,7 +395,7 @@ pre {
 	text-decoration: underline;
 }
 .slot.brat .whatis {
-	font-size: 12px;
+	font-size: 0.7rem;
 }
 
 /* ---- rule, footer, note ---- */
